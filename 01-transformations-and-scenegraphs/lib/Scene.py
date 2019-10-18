@@ -219,8 +219,8 @@ class Scene:
             for col in range(0,4):
                 s = 0
                 for k in range(0,4):
-                    s += lhs.get_element(row,k) * rhs.get_element(col,k)
-                result.set_element(col,row,s)
+                    s += lhs.get_element(row,k) * rhs.get_element(k,col)
+                result.set_element(row,col,s)
         # YOUR CODE - END (Exercise 1.3 - Matrix Multiplication)
         print("result: ", result)
         return result
