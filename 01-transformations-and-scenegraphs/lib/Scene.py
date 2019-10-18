@@ -30,32 +30,32 @@ class Scene:
         transformation_matrices.append(avango.gua.make_trans_mat(-4.0, 1.0, -1.0)*avango.gua.make_rot_mat(30, 0, 1, 0))
         transformation_matrices.append(avango.gua.make_trans_mat(-3.0, 1.0, -1.0)*avango.gua.make_rot_mat(40, 1, 0, 0))
         transformation_matrices.append(avango.gua.make_trans_mat(-2.0, 2.0, 2.0)*avango.gua.make_rot_mat(120, 0, 1, 0)*avango.gua.make_rot_mat(-20, 1, 0, 0))
-        transformation_matrices.append(avango.gua.make_trans_mat(-2.0, 1.0, 0.0)*avango.gua.make_scale_mat(2, 2, 2)*avango.gua.make_rot_mat(-120, 0, 0, 1))#*avango.gua.make_rot_mat(-10, 0, 1, 0))
-        transformation_matrices.append(avango.gua.make_trans_mat(1.0, 0.0, 0.0))
-        transformation_matrices.append(avango.gua.make_trans_mat(2.0, 0.0, 0.0))
-        transformation_matrices.append(avango.gua.make_trans_mat(3.0, 0.0, 0.0))
-        transformation_matrices.append(avango.gua.make_trans_mat(4.0, 0.0, 0.0))
+        transformation_matrices.append(avango.gua.make_trans_mat(-2.0, 1.0, 0.0)*avango.gua.make_scale_mat(2, 2, 2)*avango.gua.make_rot_mat(-120, 0, 0, 1))
+        transformation_matrices.append(avango.gua.make_trans_mat(0.0, 3.0, 0.0)*avango.gua.make_rot_mat(100, 0, 1, 0)*avango.gua.make_rot_mat(0, 0, 0, 1)*avango.gua.make_rot_mat(40, 1, 0, 0))#*avango.gua.make_rot_mat(100, 0, 1, 0)*avango.gua.make_rot_mat(40, 1, 0, 0)*avango.gua.make_rot_mat(10, 0, 0, 1))
+        transformation_matrices.append(avango.gua.make_trans_mat(0.0, 0.5, 3.0)*avango.gua.make_scale_mat(1.5, 1.5, 1.5)*avango.gua.make_rot_mat(-100, 0, 1, 0)*avango.gua.make_rot_mat(-220, 1, 0, 0))
+        transformation_matrices.append(avango.gua.make_trans_mat(2.0, 1.5, -2.0)*avango.gua.make_scale_mat(1.5, 1, 1))
+        transformation_matrices.append(avango.gua.make_trans_mat(4.0, 1.0, 2.0)*avango.gua.make_scale_mat(2, 2, 2))
         # YOUR CODE - END (Exercises 1.1 - Transformation Matrices)
 
         # transformation matrices for monkey task solution using own matrix creation functions
         own_transformation_matrices = []
 
         # YOUR CODE - BEGIN (Exercise 1.2 - Verfication)
-        own_transformation_matrices.append(self.make_trans_mat(-4.0, 0.0, 0.0))
-        own_transformation_matrices.append(self.make_trans_mat(-3.0, 0.0, 0.0))
-        own_transformation_matrices.append(self.make_trans_mat(-2.0, 0.0, 0.0))
-        own_transformation_matrices.append(self.make_trans_mat(-1.0, 0.0, 0.0))
-        own_transformation_matrices.append(self.make_trans_mat(1.0, 0.0, 0.0))
-        own_transformation_matrices.append(self.make_trans_mat(2.0, 0.0, 0.0))
-        own_transformation_matrices.append(self.make_trans_mat(3.0, 0.0, 0.0))
-        own_transformation_matrices.append(self.make_trans_mat(4.0, 0.0, 0.0))
+        own_transformation_matrices.append(self.make_trans_mat(-4.0, 1.0, -1.0)*self.make_rot_mat(30, 0, 1, 0))
+        own_transformation_matrices.append(self.make_trans_mat(-3.0, 1.0, -1.0)*self.make_rot_mat(40, 1, 0, 0))
+        own_transformation_matrices.append(self.make_trans_mat(-2.0, 2.0, 2.0)*self.make_rot_mat(120, 0, 1, 0)*self.make_rot_mat(-20, 1, 0, 0))
+        own_transformation_matrices.append(self.make_trans_mat(-2.0, 1.0, 0.0)*self.make_scale_mat(2, 2, 2)*self.make_rot_mat(-120, 0, 0, 1))
+        own_transformation_matrices.append(self.make_trans_mat(0.0, 3.0, 0.0)*self.make_rot_mat(100, 0, 1, 0)*self.make_rot_mat(0, 0, 0, 1)*self.make_rot_mat(40, 1, 0, 0))
+        own_transformation_matrices.append(self.make_trans_mat(0.0, 0.5, 3.0)*self.make_scale_mat(1.5, 1.5, 1.5)*self.make_rot_mat(-100, 0, 1, 0)*self.make_rot_mat(-220, 1, 0, 0))
+        own_transformation_matrices.append(self.make_trans_mat(2.0, 1.5, -2.0)*self.make_scale_mat(1.5, 1, 1))
+        own_transformation_matrices.append(self.make_trans_mat(4.0, 1.0, 2.0)*self.make_scale_mat(2, 2, 2))
         # YOUR CODE - BEGIN (Exercise 1.2 - Verification)
 
         # transformation matrices for monkey task solution using own matrix multiplication
         own_multiplications = []
 
         # YOUR CODE - BEGIN (Exercise 1.3 - Verfication)
-        own_multiplications.append(self.mult_mat(self.make_trans_mat(-4.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
+        own_multiplications.append(self.mult_mat(self.make_trans_mat(-4.0, 1.0, -1.0), self.make_rot_mat(30, 0, 1, 0)))#self.make_trans_mat(-4.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
         own_multiplications.append(self.mult_mat(self.make_trans_mat(-3.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
         own_multiplications.append(self.mult_mat(self.make_trans_mat(-2.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
         own_multiplications.append(self.mult_mat(self.make_trans_mat(-1.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
@@ -66,9 +66,9 @@ class Scene:
         # YOUR CODE - BEGIN (Exercise 1.3 - Verfication)
 
         # YOUR CODE - BEGIN (Toggle between matrices to be applied to monkeys)
-        self.load_solid_solution_monkeys(transformation_matrices)
+        #self.load_solid_solution_monkeys(transformation_matrices)
         #self.load_solid_solution_monkeys(own_transformation_matrices)
-        #self.load_solid_solution_monkeys(own_multiplications)
+        self.load_solid_solution_monkeys(own_multiplications)
         # YOUR CODE - END (Toggle between matrices to be applied to monkeys)
 
         # YOUR CODE - BEGIN (Uncomment before starting with Exercise 1.4)
@@ -170,7 +170,10 @@ class Scene:
     def make_trans_mat(self, tx, ty, tz):
         mat = avango.gua.Mat4()
         # YOUR CODE - BEGIN (Exercise 1.2 - Translation Matrices)
-        # ...
+        mat.set_element(0,3,tx)
+        mat.set_element(1,3,ty)
+        mat.set_element(2,3,tz)
+        #print(mat)
         # YOUR CODE - END (Exercise 1.2 - Translation Matrices)
         return mat
 
@@ -178,7 +181,21 @@ class Scene:
     def make_rot_mat(self, degrees, ax_x, ax_y, ax_z):
         mat = avango.gua.Mat4()
         # YOUR CODE - BEGIN (Exercise 1.2 - Rotation Matrices)
-        # ...
+        if (ax_x == 1) :
+            mat.set_element(1,1,math.cos(math.radians(degrees)))
+            mat.set_element(1,2,-math.sin(math.radians(degrees)))
+            mat.set_element(2,1,math.sin(math.radians(degrees)))
+            mat.set_element(2,2,math.cos(math.radians(degrees)))
+        if (ax_y == 1) :
+            mat.set_element(0,0,math.cos(math.radians(degrees)))
+            mat.set_element(2,0,-math.sin(math.radians(degrees)))
+            mat.set_element(0,2,math.sin(math.radians(degrees)))
+            mat.set_element(2,2,math.cos(math.radians(degrees)))
+        if (ax_z == 1) :
+            mat.set_element(0,0,math.cos(math.radians(degrees)))
+            mat.set_element(0,1,-math.sin(math.radians(degrees)))
+            mat.set_element(1,0,math.sin(math.radians(degrees)))
+            mat.set_element(1,1,math.cos(math.radians(degrees)))
         # YOUR CODE - END (Exercise 1.2 - Rotation Matrices)
         return mat
 
@@ -186,16 +203,26 @@ class Scene:
     def make_scale_mat(self, sx, sy, sz):
         mat = avango.gua.Mat4()
         # YOUR CODE - BEGIN (Exercise 1.2 - Scaling Matrices)
-        # ...
+        mat.set_element(0,0,sx)
+        mat.set_element(1,1,sy)
+        mat.set_element(2,2,sz)
         # YOUR CODE - END (Exercise 1.2 - Scaling Matrices)
         return mat
 
     # multiplies two matrix instances
     def mult_mat(self, lhs, rhs):
         result = avango.gua.Mat4()
+        print("lhs: ", lhs)
+        print("rhs: ", rhs)
         # YOUR CODE - BEGIN (Exercise 1.3 - Matrix Multiplication)
-        # ...
+        for row in range(0,4):
+            for col in range(0,4):
+                s = 0
+                for k in range(0,4):
+                    s += lhs.get_element(row,k) * rhs.get_element(col,k)
+                result.set_element(col,row,s)
         # YOUR CODE - END (Exercise 1.3 - Matrix Multiplication)
+        print("result: ", result)
         return result
 
     # builds two coordinate systems that should have the same transformations
