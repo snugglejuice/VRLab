@@ -56,13 +56,13 @@ class Scene:
 
         # YOUR CODE - BEGIN (Exercise 1.3 - Verfication)
         own_multiplications.append(self.mult_mat(self.make_trans_mat(-4.0, 1.0, -1.0), self.make_rot_mat(30, 0, 1, 0)))#self.make_trans_mat(-4.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
-        own_multiplications.append(self.mult_mat(self.make_trans_mat(-3.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
-        own_multiplications.append(self.mult_mat(self.make_trans_mat(-2.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
-        own_multiplications.append(self.mult_mat(self.make_trans_mat(-1.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
-        own_multiplications.append(self.mult_mat(self.make_trans_mat(1.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
-        own_multiplications.append(self.mult_mat(self.make_trans_mat(2.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
-        own_multiplications.append(self.mult_mat(self.make_trans_mat(3.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
-        own_multiplications.append(self.mult_mat(self.make_trans_mat(4.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
+        own_multiplications.append(self.mult_mat(self.make_trans_mat(-3.0, 1.0, -1.0),self.make_rot_mat(40, 1, 0, 0)))
+        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(-2.0, 2.0, 2.0),self.make_rot_mat(120, 0, 1, 0)), self.make_rot_mat(-20, 1, 0, 0)))
+        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(-2.0, 1.0, 0.0),self.make_scale_mat(2, 2, 2)), self.make_rot_mat(-120, 0, 0, 1)))
+        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(0.0, 3.0, 0.0),self.make_rot_mat(100, 0, 1, 0)), self.mult_mat(self.make_rot_mat(0, 0, 0, 1),self.make_rot_mat(40, 1, 0, 0))))
+        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(0.0, 0.5, 3.0),self.make_scale_mat(1.5, 1.5, 1.5)), self.mult_mat(self.make_rot_mat(-100, 0, 1, 0),self.make_rot_mat(-220, 1, 0, 0))))
+        own_multiplications.append(self.mult_mat(self.make_trans_mat(2.0, 1.5, -2.0), self.make_scale_mat(1.5, 1, 1)))
+        own_multiplications.append(self.mult_mat(self.make_trans_mat(4.0, 1.0, 2.0), self.make_scale_mat(2, 2, 2)))
         # YOUR CODE - BEGIN (Exercise 1.3 - Verfication)
 
         # YOUR CODE - BEGIN (Toggle between matrices to be applied to monkeys)
@@ -72,11 +72,11 @@ class Scene:
         # YOUR CODE - END (Toggle between matrices to be applied to monkeys)
 
         # YOUR CODE - BEGIN (Uncomment before starting with Exercise 1.4)
-        #self.build_equal_rotation_task()
+        self.build_equal_rotation_task()
         # YOUR CODE - END (Uncomment before starting with Exercise 1.4)
 
         # YOUR CODE - BEGIN (Uncomment before starting with Exercise 1.5)
-        #self.build_rotating_monkeys()
+        self.build_rotating_monkeys()
         # YOUR CODE - END (Uncomment before starting with Exercise 1.5)
 
         # YOUR CODE - BEGIN (Uncomment before starting with Exercise 1.8)
@@ -229,8 +229,8 @@ class Scene:
     # achieved by multiplying different matrices
     def build_equal_rotation_task(self):
         # YOUR CODE - BEGIN (Exercise 1.4 - Equal Rotations)
-        alpha = 0
-        beta = 90
+        alpha = -90
+        beta =  90
         # YOUR CODE - END (Exercise 1.4 - Equal Rotations)
 
         mat1 = avango.gua.make_trans_mat(0.0, 4.0, 0.0) * \
@@ -277,9 +277,20 @@ class Scene:
         animator = RotationAnimator()
 
         # YOUR CODE - BEGIN (Exercise 1.5 - Node Structure for big_monkey)
-        self.big_monkey.Transform.value = avango.gua.make_trans_mat(0.0, 3.0, -12.0) * \
-                                          avango.gua.make_rot_mat(45, 0, 1, 0) * \
-                                          avango.gua.make_scale_mat(2.5)
+        node = avango.gua.nodes.TransformNode(Name = "transform_node")
+        node.Transform.value = avango.gua.make_identity_mat()
+        big_monkey_trans = avango.gua.nodes.TransformNode(Name = "big_monkey_trans")
+        big_monkey_trans.Transform.value = avango.gua.make_trans_mat(0.0, 3.0, -12.0)
+        node.Children.value.append(big_monkey_trans)
+        big_monkey_rot = avango.gua.nodes.TransformNode(Name = "big_monkey_rot")
+        big_monkey_rot.Transform.value = avango.gua.make_rot_mat(45, 0, 1, 0)
+        node.Children.value.append(big_monkey_rot)
+        big_monkey_scl = avango.gua.nodes.TransformNode(Name = "big_monkey_scl")
+        big_monkey_scl.Transform.value = avango.gua.make_scale_mat(2.5)
+        node.Children.value.append(big_monkey_scl)
+
+        print(node.Transform.value)
+        self.big_monkey.Transform.value = node.Transform.value
         self.scenegraph.Root.value.Children.value.append(self.big_monkey)
         # YOUR CODE - END (Exercise 1.5 - Node Structure for big_monkey)
 
