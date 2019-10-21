@@ -212,8 +212,6 @@ class Scene:
     # multiplies two matrix instances
     def mult_mat(self, lhs, rhs):
         result = avango.gua.Mat4()
-        print("lhs: ", lhs)
-        print("rhs: ", rhs)
         # YOUR CODE - BEGIN (Exercise 1.3 - Matrix Multiplication)
         for row in range(0,4):
             for col in range(0,4):
@@ -222,7 +220,6 @@ class Scene:
                     s += lhs.get_element(row,k) * rhs.get_element(k,col)
                 result.set_element(row,col,s)
         # YOUR CODE - END (Exercise 1.3 - Matrix Multiplication)
-        print("result: ", result)
         return result
 
     # builds two coordinate systems that should have the same transformations
@@ -277,21 +274,25 @@ class Scene:
         animator = RotationAnimator()
 
         # YOUR CODE - BEGIN (Exercise 1.5 - Node Structure for big_monkey)
-        node = avango.gua.nodes.TransformNode(Name = "transform_node")
-        node.Transform.value = avango.gua.make_identity_mat()
-        big_monkey_trans = avango.gua.nodes.TransformNode(Name = "big_monkey_trans")
-        big_monkey_trans.Transform.value = avango.gua.make_trans_mat(0.0, 3.0, -12.0)
-        node.Children.value.append(big_monkey_trans)
-        big_monkey_rot = avango.gua.nodes.TransformNode(Name = "big_monkey_rot")
-        big_monkey_rot.Transform.value = avango.gua.make_rot_mat(45, 0, 1, 0)
-        node.Children.value.append(big_monkey_rot)
-        big_monkey_scl = avango.gua.nodes.TransformNode(Name = "big_monkey_scl")
-        big_monkey_scl.Transform.value = avango.gua.make_scale_mat(2.5)
-        node.Children.value.append(big_monkey_scl)
-
-        print(node.Transform.value)
-        self.big_monkey.Transform.value = node.Transform.value
-        self.scenegraph.Root.value.Children.value.append(self.big_monkey)
+        self.big_monkey_root = avango.gua.nodes.TransformNode(Name = "big_monkey_root")
+        self.big_monkey_root.Transform.value = avango.gua.make_identity_mat()
+        #print(self.big_monkey_root)
+        #print("T: ", self.big_monkey_trans.Transform.value)
+        self.big_monkey_trans = avango.gua.nodes.TransformNode(Name = "big_monkey_trans")
+        self.big_monkey_rot = avango.gua.nodes.TransformNode(Name = "big_monkey_rot")
+        #self.big_monkey_scl = avango.gua.nodes.TransformNode(Name = "big_monkey_scl")
+        #self.scenegraph.Root.value.Children.value.append(self.big_monkey_trans)
+        self.big_monkey.Transform.value = avango.gua.make_scale_mat(2.5)#make_trans_mat(0.0, 3.0, -12.0)#*avango.gua.make_rot_mat(45, 0, 1, 0)*avango.gua
+        self.big_monkey_trans.Transform.value = avango.gua.make_trans_mat(0.0, 3.0, -12.0)
+        self.big_monkey_rot.Transform.value = avango.gua.make_rot_mat(45, 0, 1, 0)
+        #self.big_monkey_scl.Transform.value = avango.gua.make_scale_mat(2.5)
+        print("R: ", self.big_monkey_rot.Transform.value)
+        #print("S: ", self.big_monkey_scl.Transform.value)
+        self.scenegraph.Root.value.Children.value.append(self.big_monkey_root)
+        self.big_monkey_root.Children.value.append(self.big_monkey_trans)
+        self.big_monkey_root.Children.value.append(self.big_monkey_rot)
+        self.big_monkey_root.Children.value.append(self.big_monkey)
+        print(self.scenegraph.Root.value.Children.value[0].Transform.value)
         # YOUR CODE - END (Exercise 1.5 - Node Structure for big_monkey)
 
         # YOUR CODE - BEGIN (Exercise 1.6 - Field Connection)
