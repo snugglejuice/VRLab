@@ -59,7 +59,7 @@ class Scene:
         own_multiplications.append(self.mult_mat(self.make_trans_mat(-3.0, 1.0, -1.0),self.make_rot_mat(40, 1, 0, 0)))
         own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(-2.0, 2.0, 2.0),self.make_rot_mat(120, 0, 1, 0)), self.make_rot_mat(-20, 1, 0, 0)))
         own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(-2.0, 1.0, 0.0),self.make_scale_mat(2, 2, 2)), self.make_rot_mat(-120, 0, 0, 1)))
-        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(0.0, 3.0, 0.0),self.make_rot_mat(100, 0, 1, 0)), self.mult_mat(self.make_rot_mat(0, 0, 0, 1),self.make_rot_mat(40, 1, 0, 0))))
+        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(0.0, 3.0, 0.0),self.make_rot_mat(-70, 0, 1, 0)), self.mult_mat(self.make_rot_mat(0, 0, 0, 1),self.mult_mat(self.make_rot_mat(-30, 1, 0, 0),self.make_scale_mat(1,1,-1)))))
         own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(0.0, 0.5, 3.0),self.make_scale_mat(1.5, 1.5, 1.5)), self.mult_mat(self.make_rot_mat(-100, 0, 1, 0),self.make_rot_mat(-220, 1, 0, 0))))
         own_multiplications.append(self.mult_mat(self.make_trans_mat(2.0, 1.5, -2.0), self.make_scale_mat(1.5, 1, 1)))
         own_multiplications.append(self.mult_mat(self.make_trans_mat(4.0, 1.0, 2.0), self.make_scale_mat(2, 2, 2)))
@@ -80,8 +80,8 @@ class Scene:
         # YOUR CODE - END (Uncomment before starting with Exercise 1.5)
 
         # YOUR CODE - BEGIN (Uncomment before starting with Exercise 1.8)
-        #wt_computer = WorldTransformComputer()
-        #wt_computer.sf_node.value = self.another_big_monkey
+        wt_computer = WorldTransformComputer()
+        wt_computer.sf_node.value = self.another_big_monkey
         # YOUR CODE - END (Uncomment before starting with Exercise 1.8)
 
     # adds a light to the scenegraph's root node
@@ -276,27 +276,22 @@ class Scene:
         # YOUR CODE - BEGIN (Exercise 1.5 - Node Structure for big_monkey)
         self.big_monkey_root = avango.gua.nodes.TransformNode(Name = "big_monkey_root")
         self.big_monkey_root.Transform.value = avango.gua.make_identity_mat()
-        #print(self.big_monkey_root)
-        #print("T: ", self.big_monkey_trans.Transform.value)
+
         self.big_monkey_trans = avango.gua.nodes.TransformNode(Name = "big_monkey_trans")
         self.big_monkey_rot = avango.gua.nodes.TransformNode(Name = "big_monkey_rot")
-        #self.big_monkey_scl = avango.gua.nodes.TransformNode(Name = "big_monkey_scl")
-        #self.scenegraph.Root.value.Children.value.append(self.big_monkey_trans)
-        self.big_monkey.Transform.value = avango.gua.make_scale_mat(2.5)#make_trans_mat(0.0, 3.0, -12.0)#*avango.gua.make_rot_mat(45, 0, 1, 0)*avango.gua
+
+        self.big_monkey.Transform.value = avango.gua.make_scale_mat(2.5)
         self.big_monkey_trans.Transform.value = avango.gua.make_trans_mat(0.0, 3.0, -12.0)
         self.big_monkey_rot.Transform.value = avango.gua.make_rot_mat(45, 0, 1, 0)
-        #self.big_monkey_scl.Transform.value = avango.gua.make_scale_mat(2.5)
-        print("R: ", self.big_monkey_rot.Transform.value)
-        #print("S: ", self.big_monkey_scl.Transform.value)
-        self.scenegraph.Root.value.Children.value.append(self.big_monkey_root)
+
         self.big_monkey_root.Children.value.append(self.big_monkey_trans)
-        self.big_monkey_root.Children.value.append(self.big_monkey_rot)
-        self.big_monkey_root.Children.value.append(self.big_monkey)
-        print(self.scenegraph.Root.value.Children.value[0].Transform.value)
+        self.big_monkey_trans.Children.value.append(self.big_monkey_rot)
+        self.big_monkey_rot.Children.value.append(self.big_monkey)
+        self.scenegraph.Root.value.Children.value.append(self.big_monkey_root)
         # YOUR CODE - END (Exercise 1.5 - Node Structure for big_monkey)
 
         # YOUR CODE - BEGIN (Exercise 1.6 - Field Connection)
-        # ...
+        self.big_monkey_rot.Transform.connect_from(animator.sf_rot_mat)
         # YOUR CODE - END (Exercise 1.6 - Field Connection)
 
         # create another_big_monkey
@@ -310,9 +305,24 @@ class Scene:
         self.another_big_monkey.Material.value.EnableBackfaceCulling.value = False
 
         # YOUR CODE - BEGIN (Exercise 1.7 - Node Structure for another_big_monkey)
-        self.another_big_monkey.Transform.value = avango.gua.make_trans_mat(8.0, 1.5, 0.0) * \
-                                                  avango.gua.make_scale_mat(2.5)
-        self.scenegraph.Root.value.Children.value.append(self.another_big_monkey)
+        #self.another_big_monkey.Transform.value = avango.gua.make_trans_mat(8.0, 1.5, 0.0) * \
+        #                                          avango.gua.make_scale_mat(2.5)
+        #self.scenegraph.Root.value.Children.value.append(self.another_big_monkey)
+        self.another_big_monkey_root = avango.gua.nodes.TransformNode(Name = "another_big_monkey_root")
+        self.another_big_monkey_root.Transform.value = avango.gua.make_identity_mat()
+
+        self.another_big_monkey_trans = avango.gua.nodes.TransformNode(Name = "another_big_monkey_trans")
+        self.another_big_monkey_rot = avango.gua.nodes.TransformNode(Name = "another_big_monkey_rot")
+
+        self.another_big_monkey.Transform.value = avango.gua.make_scale_mat(2.5)
+        self.another_big_monkey_trans.Transform.value = avango.gua.make_trans_mat(8.0, 1.5, 0.0)
+        self.another_big_monkey_rot.Transform.value = avango.gua.make_rot_mat(45, 0, 1, 0)
+
+        self.another_big_monkey_root.Children.value.append(self.another_big_monkey_rot)
+        self.another_big_monkey_rot.Children.value.append(self.another_big_monkey_trans)
+        self.another_big_monkey_trans.Children.value.append(self.another_big_monkey)
+        self.scenegraph.Root.value.Children.value.append(self.another_big_monkey_root)
+        self.another_big_monkey_rot.Transform.connect_from(animator.sf_rot_mat)
         # YOUR CODE - END (Exercise 1.7 - Node Structure for another_big_monkey)
         
 
@@ -346,7 +356,10 @@ class WorldTransformComputer(avango.script.Script):
 
     def compute_world_transform(self, node):
         # YOUR CODE - BEGIN (Exercise 1.8 - Compute World Transformation)
-        pass
+        #pass
+        if node.Parent.value == None:
+            return node.Transform.value
+        return self.compute_world_transform(node.Parent.value) * node.Transform.value
         # YOUR CODE - END (Exercise 1.8 - Compute World Transformation)
 
     # called every frame because of self.always_evaluate(True)
@@ -355,5 +368,8 @@ class WorldTransformComputer(avango.script.Script):
             print("Warning: World transform computation not correct.")
 
         # YOUR CODE - BEGIN (Exercise 1.9 - Matrix Decomposition)
-        # ...
+        matrix = self.compute_world_transform(self.sf_node.value)
+        print("Translation: ", matrix.get_translate())
+        print("Rotate: ", matrix.get_rotate())
+        print("Scale: ", matrix.get_scale())
         # YOUR CODE - END (Exercise 1.9 - Matrix Decomposition)
