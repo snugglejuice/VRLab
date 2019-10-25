@@ -31,8 +31,8 @@ class Scene:
         transformation_matrices.append(avango.gua.make_trans_mat(-3.0, 1.0, -1.0)*avango.gua.make_rot_mat(40, 1, 0, 0))
         transformation_matrices.append(avango.gua.make_trans_mat(-2.0, 2.0, 2.0)*avango.gua.make_rot_mat(120, 0, 1, 0)*avango.gua.make_rot_mat(-20, 1, 0, 0))
         transformation_matrices.append(avango.gua.make_trans_mat(-2.0, 1.0, 0.0)*avango.gua.make_scale_mat(2, 2, 2)*avango.gua.make_rot_mat(-120, 0, 0, 1))
-        transformation_matrices.append(avango.gua.make_trans_mat(0.0, 3.0, 0.0)*avango.gua.make_rot_mat(100, 0, 1, 0)*avango.gua.make_rot_mat(0, 0, 0, 1)*avango.gua.make_rot_mat(40, 1, 0, 0))#*avango.gua.make_rot_mat(100, 0, 1, 0)*avango.gua.make_rot_mat(40, 1, 0, 0)*avango.gua.make_rot_mat(10, 0, 0, 1))
-        transformation_matrices.append(avango.gua.make_trans_mat(0.0, 0.5, 3.0)*avango.gua.make_scale_mat(1.5, 1.5, 1.5)*avango.gua.make_rot_mat(-100, 0, 1, 0)*avango.gua.make_rot_mat(-220, 1, 0, 0))
+        transformation_matrices.append(avango.gua.make_trans_mat(0.0, 3.0, 0.0)*avango.gua.make_rot_mat(100, 0, 1, 0)*avango.gua.make_rot_mat(30, 1, 0, 0)*avango.gua.make_rot_mat(5, 0, 0, 1))
+        transformation_matrices.append(avango.gua.make_trans_mat(0.0, 0.5, 3.0)*avango.gua.make_scale_mat(1.5, 1.5, 1.5)*avango.gua.make_rot_mat(-100, 0, 1, 0)*avango.gua.make_rot_mat(145, 1, 0, 0))
         transformation_matrices.append(avango.gua.make_trans_mat(2.0, 1.5, -2.0)*avango.gua.make_scale_mat(1.5, 1, 1))
         transformation_matrices.append(avango.gua.make_trans_mat(4.0, 1.0, 2.0)*avango.gua.make_scale_mat(2, 2, 2))
         # YOUR CODE - END (Exercises 1.1 - Transformation Matrices)
@@ -45,8 +45,8 @@ class Scene:
         own_transformation_matrices.append(self.make_trans_mat(-3.0, 1.0, -1.0)*self.make_rot_mat(40, 1, 0, 0))
         own_transformation_matrices.append(self.make_trans_mat(-2.0, 2.0, 2.0)*self.make_rot_mat(120, 0, 1, 0)*self.make_rot_mat(-20, 1, 0, 0))
         own_transformation_matrices.append(self.make_trans_mat(-2.0, 1.0, 0.0)*self.make_scale_mat(2, 2, 2)*self.make_rot_mat(-120, 0, 0, 1))
-        own_transformation_matrices.append(self.make_trans_mat(0.0, 3.0, 0.0)*self.make_rot_mat(100, 0, 1, 0)*self.make_rot_mat(0, 0, 0, 1)*self.make_rot_mat(40, 1, 0, 0))
-        own_transformation_matrices.append(self.make_trans_mat(0.0, 0.5, 3.0)*self.make_scale_mat(1.5, 1.5, 1.5)*self.make_rot_mat(-100, 0, 1, 0)*self.make_rot_mat(-220, 1, 0, 0))
+        own_transformation_matrices.append(self.make_trans_mat(0.0, 3.0, 0.0)*self.make_rot_mat(100, 0, 1, 0)*self.make_rot_mat(30, 1, 0, 0)*self.make_rot_mat(5, 0, 0, 1))
+        own_transformation_matrices.append(self.make_trans_mat(0.0, 0.5, 3.0)*self.make_scale_mat(1.5, 1.5, 1.5)*self.make_rot_mat(-100, 0, 1, 0)*self.make_rot_mat(145, 1, 0, 0))
         own_transformation_matrices.append(self.make_trans_mat(2.0, 1.5, -2.0)*self.make_scale_mat(1.5, 1, 1))
         own_transformation_matrices.append(self.make_trans_mat(4.0, 1.0, 2.0)*self.make_scale_mat(2, 2, 2))
         # YOUR CODE - BEGIN (Exercise 1.2 - Verification)
@@ -55,12 +55,12 @@ class Scene:
         own_multiplications = []
 
         # YOUR CODE - BEGIN (Exercise 1.3 - Verfication)
-        own_multiplications.append(self.mult_mat(self.make_trans_mat(-4.0, 1.0, -1.0), self.make_rot_mat(30, 0, 1, 0)))#self.make_trans_mat(-4.0, 0.0, 0.0), self.make_trans_mat(0.0, 0.0, 0.0)))
+        own_multiplications.append(self.mult_mat(self.make_trans_mat(-4.0, 1.0, -1.0), self.make_rot_mat(30, 0, 1, 0)))
         own_multiplications.append(self.mult_mat(self.make_trans_mat(-3.0, 1.0, -1.0),self.make_rot_mat(40, 1, 0, 0)))
         own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(-2.0, 2.0, 2.0),self.make_rot_mat(120, 0, 1, 0)), self.make_rot_mat(-20, 1, 0, 0)))
         own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(-2.0, 1.0, 0.0),self.make_scale_mat(2, 2, 2)), self.make_rot_mat(-120, 0, 0, 1)))
-        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(0.0, 3.0, 0.0),self.make_rot_mat(-70, 0, 1, 0)), self.mult_mat(self.make_rot_mat(0, 0, 0, 1),self.mult_mat(self.make_rot_mat(-30, 1, 0, 0),self.make_scale_mat(1,1,-1)))))
-        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(0.0, 0.5, 3.0),self.make_scale_mat(1.5, 1.5, 1.5)), self.mult_mat(self.make_rot_mat(-100, 0, 1, 0),self.make_rot_mat(-220, 1, 0, 0))))
+        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(0.0, 3.0, 0.0),self.make_rot_mat(100, 0, 1, 0)), self.mult_mat(self.make_rot_mat(30, 1, 0, 0),self.make_rot_mat(5, 0, 0, 1))))
+        own_multiplications.append(self.mult_mat(self.mult_mat(self.make_trans_mat(0.0, 0.5, 3.0),self.make_scale_mat(1.5, 1.5, 1.5)), self.mult_mat(self.make_rot_mat(-100, 0, 1, 0),self.make_rot_mat(145, 1, 0, 0))))
         own_multiplications.append(self.mult_mat(self.make_trans_mat(2.0, 1.5, -2.0), self.make_scale_mat(1.5, 1, 1)))
         own_multiplications.append(self.mult_mat(self.make_trans_mat(4.0, 1.0, 2.0), self.make_scale_mat(2, 2, 2)))
         # YOUR CODE - BEGIN (Exercise 1.3 - Verfication)
@@ -173,7 +173,6 @@ class Scene:
         mat.set_element(0,3,tx)
         mat.set_element(1,3,ty)
         mat.set_element(2,3,tz)
-        #print(mat)
         # YOUR CODE - END (Exercise 1.2 - Translation Matrices)
         return mat
 
@@ -356,7 +355,6 @@ class WorldTransformComputer(avango.script.Script):
 
     def compute_world_transform(self, node):
         # YOUR CODE - BEGIN (Exercise 1.8 - Compute World Transformation)
-        #pass
         if node.Parent.value == None:
             return node.Transform.value
         return self.compute_world_transform(node.Parent.value) * node.Transform.value
