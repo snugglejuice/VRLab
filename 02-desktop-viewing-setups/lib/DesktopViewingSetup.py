@@ -69,12 +69,17 @@ class DesktopViewingSetup(avango.script.Script):
         self.camera_node.SceneGraph.value = self.scenegraph.Name.value
         self.camera_node.LeftScreenPath.value = self.screen_node.Path.value
         # YOUR CODE - BEGIN (Exercise 2.4 - Set Blacklist on Camera)
-        # ...
+        self.camera_node.BlackList.value = ["exclude"] 
         # YOUR CODE - END (Exercise 2.4 - Set Blacklist on Camera)
 
         # YOUR CODE - BEGIN (Exercises 2.3, 2.5, 2.6, 2.7 - Attach Camera Node)
         #self.scenegraph['/static_transform'].Children.value.append(self.camera_node)
+        print("Position",self.camera_node.WorldTransform.value)
         self.scenegraph['/bird_rot_animation/bird_transform'].Children.value.append(self.camera_node)
+        self.camera_node.Transform.value = avango.gua.make_trans_mat(-5.0,0.0,0.0)
+        print(self.scenegraph['/bird_rot_animation/bird_transform'].WorldTransform.value)        
+        print("Position 2",self.camera_node.WorldTransform.value)
+        #self.camera_node.Transform.value = avango.gua.make_trans_mat(-5.0,0.0,0.0)
         # YOUR CODE - END (Exercises 2.3, 2.5, 2.6, 2.7 - Attach Camera Node)
 
         # create keyboard sensor and connect fields
@@ -97,7 +102,7 @@ class DesktopViewingSetup(avango.script.Script):
               str(round(self.compute_fov_in_deg(), 3)) + " deg")
 
         # compute model-view transform of bird (used to check Exercise 2.9)
-        bird_geometry_node = self.scenegraph['/bird_rot_animation/bird_transform/bird_model']
+        bird_geometry_node = self.scenegraph['/bird_rot_animation/bird_transform']
         print()
         print("The initial model-view transformation of the bird model is:")
         print(self.compute_model_view_transform(bird_geometry_node))
@@ -127,13 +132,12 @@ class DesktopViewingSetup(avango.script.Script):
         if self.sf_visibility_toggle.value:
             node_to_toggle = self.scenegraph['/bird_rot_animation/bird_transform/bird_model']
             # YOUR CODE - BEGIN (Exercise 2.4 - Toggle Tag to Match or Unmatch Blacklist)
-            print("Node: ", node_to_toggle.Tags.empty())
-            print(self.camera_node.BlackList)
-            if (node_to_toggle.Tags == self.camera_node.BlackList):
-                self.camera_node.BlackList.pop
+            if (self.camera_node.BlackList.value[0] in node_to_toggle.Tags.value):
+                #Unmatch
+                node_to_toggle.Tags.value.remove(self.camera_node.BlackList.value[0])
             else:
-                print("Match")
-                #self.camera_node.BlackList.value.append(node_to_toggle.Tags)
+                #Match
+                node_to_toggle.Tags.value.append(self.camera_node.BlackList.value[0])
             # YOUR CODE - END (Exercise 2.4 - Toggle Tag to Match or Unmatch Blacklist)
 
     # computes the field-of-view of the viewing setup and returns the result in degrees
