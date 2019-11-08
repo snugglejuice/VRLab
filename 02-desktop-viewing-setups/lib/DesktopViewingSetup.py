@@ -29,8 +29,14 @@ class DesktopViewingSetup(avango.script.Script):
     sf_right_arrow_key.value = False
 
     # YOUR CODE - BEGIN (Exercise 2.7 - Fields for Up and Down Arrow Keys)
-    # ...
+    frame_time = time.time()
+    sf_up_arrow_key = avango.SFBool()
+    sf_up_arrow_key.value = False
+
+    sf_down_arrow_key = avango.SFBool()
+    sf_down_arrow_key.value = False
     # YOUR CODE - END (Exercise 2.7 - Fields for Up and Down Arrow Keys)
+
 
     def __init__(self):
         self.super(DesktopViewingSetup).__init__()
@@ -48,7 +54,11 @@ class DesktopViewingSetup(avango.script.Script):
 
         # additional transformation nodes
         # YOUR CODE - BEGIN (Exercises 2.3, 2.5, 2.6, 2.7 - Node Structures)
-        #self.bird_transform = self.scenegraph['/bird_rot_animation/bird_transform']
+        self.node_camera_trans = avango.gua.nodes.TransformNode(Name = "node_camera_trans")
+        self.node_camera_trans.Transform.value = avango.gua.make_trans_mat(0,0,5)
+        self.node_camera_rot = avango.gua.nodes.TransformNode(Name = "node_camera_rot")
+        self.scenegraph['/bird_rot_animation/bird_transform/'].Children.value.append(self.node_camera_rot)
+        self.node_camera_rot.Children.value.append(self.node_camera_trans)
         # YOUR CODE - END (Exercises 2.3, 2.5, 2.6, 2.7 - Node Structures)
 
         # screen node
@@ -56,12 +66,11 @@ class DesktopViewingSetup(avango.script.Script):
         self.screen_node = avango.gua.nodes.ScreenNode(Name='screen_node')
         self.screen_node.Width.value = self.screen_dimensions.x
         self.screen_node.Height.value = self.screen_dimensions.y
-        self.screen_node.Transform.value = avango.gua.make_trans_mat(
-            0.0, 0.0, -0.8)
+        self.screen_node.Transform.value = avango.gua.make_trans_mat(0.0, 0.0, -0.8)
 
         # YOUR CODE - BEGIN (Exercises 2.3, 2.5, 2.6, 2.7 - Attach Screen Node)
         #self.scenegraph['/static_transform'].Children.value.append(self.screen_node)
-        self.scenegraph['/bird_rot_animation/bird_transform'].Children.value.append(self.screen_node)
+        self.node_camera_trans.Children.value.append(self.screen_node)
         # YOUR CODE - END (Exercises 2.3, 2.5, 2.6, 2.7 - Attach Screen Node)
 
         # camera node (head)
@@ -74,12 +83,8 @@ class DesktopViewingSetup(avango.script.Script):
 
         # YOUR CODE - BEGIN (Exercises 2.3, 2.5, 2.6, 2.7 - Attach Camera Node)
         #self.scenegraph['/static_transform'].Children.value.append(self.camera_node)
-        print("Position",self.camera_node.WorldTransform.value)
-        self.scenegraph['/bird_rot_animation/bird_transform'].Children.value.append(self.camera_node)
-        self.camera_node.Transform.value = avango.gua.make_trans_mat(-5.0,0.0,0.0)
-        print(self.scenegraph['/bird_rot_animation/bird_transform'].WorldTransform.value)        
-        print("Position 2",self.camera_node.WorldTransform.value)
-        #self.camera_node.Transform.value = avango.gua.make_trans_mat(-5.0,0.0,0.0)
+        #self.scenegraph['/bird_rot_animation/bird_transform/'].Children.value.append(self.camera_node)
+        self.node_camera_trans.Children.value.append(self.camera_node)
         # YOUR CODE - END (Exercises 2.3, 2.5, 2.6, 2.7 - Attach Camera Node)
 
         # create keyboard sensor and connect fields
@@ -90,8 +95,9 @@ class DesktopViewingSetup(avango.script.Script):
         self.sf_left_arrow_key.connect_from(self.keyboard_sensor.Button5)
         self.sf_right_arrow_key.connect_from(self.keyboard_sensor.Button6)
         self.sf_visibility_toggle.connect_from(self.keyboard_sensor.Button7)
-        # YOUR CODE - BEGIN (Exercise 2.7 - Connect Up and Down Arrow Keys)
-        # ...
+        # YOUR CODE - BEGIN (Exercise 2.7 - Connect Up and Down Arrow Keys)        
+        self.sf_up_arrow_key.connect_from(self.keyboard_sensor.Button8)
+        self.sf_down_arrow_key.connect_from(self.keyboard_sensor.Button9)
         # YOUR CODE - END (Exercise 2.7 - Connect Up and Down Arrow Keys)
 
         # compute and set field-of-view (used to check Exercises 2.1 and 2.2)
@@ -115,15 +121,24 @@ class DesktopViewingSetup(avango.script.Script):
         rotation_speed = 60.0  # deg/s
         
         # YOUR CODE - BEGIN (Exercise 2.8 - Frame-Rate Independent Mapping of Camera Controls)
-
+        #self.cur_time = 
+        dif = time.time()-self.frame_time
+        self.frame_time = time.time()
         # YOUR CODE - BEGIN (Exercise 2.6 - Map Left and Right Arrow Keys)
-        # ...
+        if  self.sf_left_arrow_key.value:
+            self.node_camera_trans.Transform.value = self.node_camera_trans.Transform.value * avango.gua.make_rot_mat(rotation_speed*dif,0,1,0)
+            
+        if  self.sf_right_arrow_key.value:
+            self.node_camera_trans.Transform.value = self.node_camera_trans.Transform.value * avango.gua.make_rot_mat(-rotation_speed*dif,0,1,0)
         # YOUR CODE - END (Exercise 2.6 - Map Left and Right Arrow Keys)
 
         # YOUR CODE - BEGIN (Exercise 2.7 - Map Up and Down Arrow Keys)
-        # ...
+        if  self.sf_up_arrow_key.value:
+            self.node_camera_rot.Transform.value = self.node_camera_rot.Transform.value * avango.gua.make_rot_mat(-rotation_speed*dif,1,0,0)
+            
+        if  self.sf_down_arrow_key.value:
+            self.node_camera_rot.Transform.value = self.node_camera_rot.Transform.value * avango.gua.make_rot_mat(rotation_speed*dif,1,0,0)
         # YOUR CODE - END (Exercise 2.7 - Map Up and Down Arrow Keys)
-
         # YOUR CODE - END (Exercise 2.8 - Frame-Rate Independent Mapping of Camera Controls)
 
     # called whenever sf_visibility_toggle_changes
@@ -162,7 +177,17 @@ class DesktopViewingSetup(avango.script.Script):
     # computes the model-view transformation of a given node
     def compute_model_view_transform(self, node):
         # YOUR CODE - BEGIN (Exercise 2.9 - Model-View Transformation)
-        return avango.gua.make_identity_mat()
+        trans = node.WorldTransform.value
+        cur_node = self.screen_node
+        node_list = [cur_node]
+        cur_node = cur_node.Parent.value
+        while cur_node.Parent.value!= None:
+            node_list.append(cur_node)
+            cur_node = cur_node.Parent.value
+        node_list.reverse()
+        for n in node_list:
+            trans *= avango.gua.make_inverse_mat(n.Transform.value)
+        return trans 
         # YOUR CODE - END (Exercise 2.9 - Model-View Transformation)
 
     # registers a window created in the class Renderer with the camera node

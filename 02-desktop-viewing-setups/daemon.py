@@ -28,7 +28,8 @@ def init_keyboard():
         keyboard.buttons[6] = 'EV_KEY::KEY_RIGHT'
         keyboard.buttons[7] = 'EV_KEY::KEY_LEFTALT'
         # YOUR CODE - BEGIN (Exercise 2.7 - Register Up and Down Arrow Keys)
-        # ...
+        keyboard.buttons[8] = 'EV_KEY::KEY_UP'
+        keyboard.buttons[9] = 'EV_KEY::KEY_DOWN'
         # YOUR CODE - END (Exercise 2.7 - Register Up and Down Arrow Keys)
 
         device_list.append(keyboard)
