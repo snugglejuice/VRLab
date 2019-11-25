@@ -200,7 +200,6 @@ class BirdControls(avango.script.Script):
         self.velocity = self.velocity + avango.gua.Vec2(x_offset,y_offset)
         self.bird_node.Transform.value = self.bird_node.Transform.value * \
             avango.gua.make_trans_mat(self.velocity.x, self.velocity.y, 0.0)
-        print(self.velocity)
         #self.bird_node.Transform.value = ...
         # YOUR_CODE - END (Exercise 3.1 - Isotonic Rate-Control)
 
@@ -219,9 +218,8 @@ class BirdControls(avango.script.Script):
     # moves the bird using a position-control transfer function on the space navigator input
     def apply_elastic_position_control_mapping(self, x_input, y_input):
         # YOUR CODE - BEGIN (Exercise 3.3 - Elastic Position-Control)
-        print(x_input,y_input)
-        x_offset = x_input * 0.001
-        y_offset = -y_input * 0.001
+        x_offset = x_input * 0.0001
+        y_offset = -y_input * 0.0001
         self.bird_node.Transform.value = self.bird_node.Transform.value * \
             avango.gua.make_trans_mat(x_offset, y_offset, 0.0)
         # self.bird_node.Transform.value = ...
@@ -230,8 +228,8 @@ class BirdControls(avango.script.Script):
     # moves the bird using a rate-control transfer function on the space navigator input
     def apply_elastic_rate_control_mapping(self, x_input, y_input):
         # YOUR CODE - BEGIN (Exercise 3.4 - Elastic Rate-Control)
-        x_offset = x_input * 0.000002
-        y_offset = -y_input * 0.000002
+        x_offset = x_input * 0.000001
+        y_offset = -y_input * 0.000001
         self.velocity = self.velocity + avango.gua.Vec2(x_offset,y_offset)
         self.bird_node.Transform.value = self.bird_node.Transform.value * \
             avango.gua.make_trans_mat(self.velocity.x, self.velocity.y, 0.0)
@@ -241,8 +239,8 @@ class BirdControls(avango.script.Script):
     # moves the bird using an acceleration-control transfer function on the space navigator input
     def apply_elastic_acceleration_control_mapping(self, x_input, y_input):
         # YOUR CODE - BEGIN (Exercise 3.5 - Elastic Acceleration-Control)
-        x_offset = x_input * 0.000000005
-        y_offset = -y_input * 0.00000005
+        x_offset = x_input  * 0.0000000000005
+        y_offset = -y_input * 0.0000000000005
         self.acceleration = self.acceleration + avango.gua.Vec2(x_offset,y_offset)
         self.velocity = self.velocity + self.acceleration
         self.bird_node.Transform.value = self.bird_node.Transform.value * \
@@ -273,19 +271,18 @@ class BirdControls(avango.script.Script):
     def animate_bird(self):
         if self.animation_start_time is not None:
             # YOUR CODE - BEGIN (Exercises 3.6 and 3.7 - Animation)
-            distance_to_travel = self.animation_target_pos - self.animation_start_pos
-            distance_travelled = self.bird_node.Transform.value.get_translate() - self.animation_start_pos
-            speed = 1
-            expected_time = distance_to_travel.x/speed
-            fraction_distance = math.sqrt((distance_travelled.x)**2 + (distance_travelled.y)**2)/math.sqrt((distance_to_travel.x)**2 + (distance_to_travel.y)**2)       
-            #print(time.time() - self.animation_start_time)
-            fraction = avango.gua.Vec2(0.01*(distance_to_travel.x),0.01*(distance_to_travel.y))#speed*(time.time() - self.animation_start_time)/(math.sqrt((self.animation_target_pos.x-self.animation_start_pos.x)**2 + (self.animation_target_pos.y-self.animation_start_pos.y)**2))
-            print(fraction)
-            #fraction = avango.gua.Vec2(3*(fraction.x**2)-2*(fraction.x**3),3*(fraction.y**2)-2*(fraction.y**3))
-            #print(fraction)
-            self.bird_node.Transform.value = self.bird_node.Transform.value * avango.gua.make_trans_mat(fraction.x, fraction.y, 0)
-            distance_travelled = self.bird_node.Transform.value.get_translate() - self.animation_start_pos
-            if (abs(distance_travelled.x) >= abs(distance_to_travel.x)) & (abs(distance_travelled.y) >= abs(distance_to_travel.y)):
+            speed = 10
+            distance_x = self.animation_target_pos.x - self.animation_start_pos.x
+            distance_y = self.animation_target_pos.y - self.animation_start_pos.y
+            distance_to_travel = (self.animation_target_pos - self.animation_start_pos)
+            distance = (math.sqrt(distance_x**2 + distance_y**2))
+            expected_time =  (distance/speed)
+            t = time.time()-self.animation_start_time
+            fraction = t/expected_time
+            fraction = 3*(fraction**2)-2*(fraction**3)
+            self.bird_node.Transform.value = avango.gua.make_trans_mat(self.animation_start_pos.x + fraction * distance_x, self.animation_start_pos.y + fraction * distance_y, self.bird_node.Transform.value.get_translate().z)
+            if (fraction >= 0.99):
+                self.bird_node.Transform.value = avango.gua.make_trans_mat(self.animation_target_pos.x, self.animation_target_pos.y, self.bird_node.Transform.value.get_translate().z)
                 self.animation_target_pos = None
                 self.animation_start_time = None
                 self.animation_start_pos = None
