@@ -239,8 +239,8 @@ class BirdControls(avango.script.Script):
     # moves the bird using an acceleration-control transfer function on the space navigator input
     def apply_elastic_acceleration_control_mapping(self, x_input, y_input):
         # YOUR CODE - BEGIN (Exercise 3.5 - Elastic Acceleration-Control)
-        x_offset = x_input  * 0.0000000000005
-        y_offset = -y_input * 0.0000000000005
+        x_offset = x_input  * 0.0000000005
+        y_offset = -y_input * 0.0000000005
         self.acceleration = self.acceleration + avango.gua.Vec2(x_offset,y_offset)
         self.velocity = self.velocity + self.acceleration
         self.bird_node.Transform.value = self.bird_node.Transform.value * \
