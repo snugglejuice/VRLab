@@ -75,3 +75,5 @@ class NavigationControls(avango.script.Script):
         now = time.time()
         elapsed = now - self.lf_time
         self.lf_time = now
+        self.sf_output_matrix.value = self.sf_output_matrix.value * \
+                                avango.gua.make_trans_mat(self.sf_input_x.value*0.001,0.0,self.sf_input_z.value*0.001)
