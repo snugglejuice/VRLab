@@ -20,6 +20,7 @@ class Scene:
         self.build_light()
         self.build_park()
         self.build_platform()
+        self.build_collection_objects()
 
     # adds a light to the scenegraph's root nodes
     def build_light(self):
@@ -103,6 +104,20 @@ class Scene:
 
         for child in start_node.Children.value:
             self.apply_backface_culling_recursively(child, boolean)
+    # 4.5
+    def build_collection_objects(self):
+        vector_list = [avango.gua.Vec3(0,0,10),
+                        avango.gua.Vec3(5,0,-10),
+                        avango.gua.Vec3(10,5,20),
+                        avango.gua.Vec3(0,10,-30),
+                        avango.gua.Vec3(0,0,5),
+                        avango.gua.Vec3(35,0,0)]
+        self.obj_transform_list = []
+        for i in range(len(vector_list)):
+            obj_transform = self.loader.create_geometry_from_file('sphere_'+str(i),'data/objects/sphere.obj',avango.gua.LoaderFlags.LOAD_MATERIALS |avango.gua.LoaderFlags.MAKE_PICKABLE)
+            obj_transform.Transform.value = avango.gua.make_trans_mat(vector_list[i].x, vector_list[i].y, vector_list[i].z)
+            self.obj_transform_list.append(obj_transform)
+            self.scenegraph.Root.value.Children.value.append(obj_transform)
 
 
 # Field Container producing an up-and-down animation matrix
