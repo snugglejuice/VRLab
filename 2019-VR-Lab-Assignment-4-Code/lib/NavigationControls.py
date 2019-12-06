@@ -12,6 +12,8 @@ import random
 import statistics
 import time
 
+from lib.Picker import *
+
 # class realizing a spacemouse navigation on a desktop setup
 class NavigationControls(avango.script.Script):
 
@@ -75,5 +77,26 @@ class NavigationControls(avango.script.Script):
         now = time.time()
         elapsed = now - self.lf_time
         self.lf_time = now
+        # 4.1
+        x_offset = self.sf_input_x.value*0.00001
+        z_offset = self.sf_input_z.value*0.00001
+        ry_offset = self.sf_input_ry.value*0.0001
+        rx_offset = self.sf_input_rx.value*0.05
         self.sf_output_matrix.value = self.sf_output_matrix.value * \
-                                avango.gua.make_trans_mat(self.sf_input_x.value*0.001,0.0,self.sf_input_z.value*0.001)
+                                avango.gua.make_trans_mat(x_offset,0.0,z_offset) * \
+                                avango.gua.make_rot_mat(ry_offset,0,1,0)
+        # 4.2 rot
+        self.scenegraph['/navigation_node/avatar/camera_rot'].Transform.value = avango.gua.make_rot_mat(rx_offset,1,0,0)
+
+        # 4.3
+        picker = Picker(self.scenegraph)
+        result = picker.compute_pick_result(self.scenegraph['/navigation_node/avatar'].Transform.value.get_translate(),avango.gua.Vec3(0.0, -1.0, 0.0),10,[])
+        if (result != None):
+            if (result.Distance.value < 2):
+                self.scenegraph['/navigation_node/avatar'].Transform.value = self.scenegraph['/navigation_node/avatar'].Transform.value * \
+                                                                            avango.gua.make_trans_mat(0,0.01,0)
+            elif (result.Distance.value > 2):
+                self.scenegraph['/navigation_node/avatar'].Transform.value = self.scenegraph['/navigation_node/avatar'].Transform.value *\
+                                                                            avango.gua.make_trans_mat(0,-0.01,0)
+            else:
+                pass

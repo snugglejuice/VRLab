@@ -46,14 +46,25 @@ class DesktopViewingSetup:
         self.screen_node.Height.value = self.screen_dimensions.y
         self.screen_node.Transform.value = avango.gua.make_trans_mat(
             0.0, 0.0, -0.6)
-        self.navigation_node.Children.value.append(self.screen_node)
+        #self.navigation_node.Children.value.append(self.screen_node)
 
         # camera node (head)
         self.camera_node = avango.gua.nodes.CameraNode(Name='camera_node')
         self.camera_node.SceneGraph.value = self.scenegraph.Name.value
-        self.camera_node.LeftScreenPath.value = self.screen_node.Path.value
+        #self.camera_node.LeftScreenPath.value = self.screen_node.Path.value
         self.camera_node.BlackList.value = ['invisible']
-        self.navigation_node.Children.value.append(self.camera_node)
+        #self.navigation_node.Children.value.append(self.camera_node)
+        # 4.2
+        self.camera_rot = avango.gua.nodes.TransformNode(Name='camera_rot')
+        self.camera_rot.Transform.value = avango.gua.make_identity_mat()
+        #self.camera_rot.Transform.value = avango.gua.make_rot_mat(self.navigation_controls.sf_input_rx.value*0.05,1,0,0)
+        self.camera_trans = avango.gua.nodes.TransformNode(Name='camera_trans')
+        self.camera_trans.Transform.value = avango.gua.make_trans_mat(0,0,15) 
+        self.avatar.Children.value.append(self.camera_rot)
+        self.camera_rot.Children.value.append(self.camera_trans)
+        self.camera_trans.Children.value.append(self.screen_node)
+        self.camera_node.LeftScreenPath.value = self.screen_node.Path.value
+        self.camera_trans.Children.value.append(self.camera_node)
 
     # registers a window created in the class Renderer with the camera node
     def register_window(self, window):
@@ -64,3 +75,5 @@ class DesktopViewingSetup:
     # registers a pipeline description in the class Renderer with the camera node
     def register_pipeline_description(self, pipeline_description):
         self.camera_node.PipelineDescription.value = pipeline_description
+
+        
