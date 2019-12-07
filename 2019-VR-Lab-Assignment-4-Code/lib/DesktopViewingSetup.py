@@ -39,6 +39,23 @@ class DesktopViewingSetup:
             child.Material.value.set_uniform("Roughness", 0.6)
         self.navigation_node.Children.value.append(self.avatar)
 
+        # 4.5
+
+        sphere_coords = [avango.gua.Vec3(5,9,-13),
+                        avango.gua.Vec3(10,8,-13),
+                        avango.gua.Vec3(10,8,-15),
+                        avango.gua.Vec3(0,1, 5),
+                        avango.gua.Vec3(5,1,4)]
+        self.pickable_object_list = []
+
+        for i in range(len(sphere_coords)):
+            obj_transform = self.loader.create_geometry_from_file('sphere_'+str(i),'data/objects/sphere.obj',avango.gua.LoaderFlags.LOAD_MATERIALS |avango.gua.LoaderFlags.MAKE_PICKABLE)
+            
+            obj_transform.Transform.value = avango.gua.make_trans_mat(sphere_coords[i].x, sphere_coords[i].y, sphere_coords[i].z)
+            self.pickable_object_list.append(obj_transform)
+            self.scenegraph.Root.value.Children.value.append(obj_transform)
+
+        self.navigation_controls.set_pickable_object(self.pickable_object_list)
         # screen node
         self.screen_dimensions = SCREEN_SIZE
         self.screen_node = avango.gua.nodes.ScreenNode(Name='screen_node')
@@ -59,7 +76,7 @@ class DesktopViewingSetup:
         self.camera_rot.Transform.value = avango.gua.make_identity_mat()
         #self.camera_rot.Transform.value = avango.gua.make_rot_mat(self.navigation_controls.sf_input_rx.value*0.05,1,0,0)
         self.camera_trans = avango.gua.nodes.TransformNode(Name='camera_trans')
-        self.camera_trans.Transform.value = avango.gua.make_trans_mat(0,0,15) 
+        self.camera_trans.Transform.value = avango.gua.make_trans_mat(0,0,30) 
         self.avatar.Children.value.append(self.camera_rot)
         self.camera_rot.Children.value.append(self.camera_trans)
         self.camera_trans.Children.value.append(self.screen_node)

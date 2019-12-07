@@ -71,6 +71,8 @@ class NavigationControls(avango.script.Script):
         self.scenegraph = scenegraph
         self.always_evaluate(True)
 
+    def set_pickable_object(self, pickable_object_list):
+        self.pickable_object_list = pickable_object_list
     # called every frame because of self.always_evaluate(True)
     # updates sf_output_matrix by processing the inputs
     falltime = 0
@@ -80,17 +82,21 @@ class NavigationControls(avango.script.Script):
         self.lf_time = now
 
         # 4.3
+        position = self.scenegraph['/navigation_node'].Transform.value.get_translate()
         trans_y = 0
+        height_figure = 2
         picker = Picker(self.scenegraph)
-        result = picker.compute_pick_result(self.scenegraph['/navigation_node'].Transform.value.get_translate(),avango.gua.Vec3(0.0, -1.0, 0.0),100,[])
+        result = picker.compute_pick_result(position,avango.gua.Vec3(0.0, -1.0, 0.0),10,[])
+        
         if (result != None):
-            if ('/sphere_' not in result.Object.value.Name.value):
-                trans_y = 2-result.Distance.value
-                if (trans_y < 0):
-                    self.falltime += 1;
-                    trans_y = -0.000001*self.falltime
-                else:
-                    self.falltime = 0
+            if (round(result.Distance.value,3) < height_figure):
+                trans_y += 0.01
+                self.falltime = 0
+            elif (round(result.Distance.value,3) > height_figure):
+                self.falltime += 1
+                trans_y -= 0.00001*self.falltime
+            else:
+                self.falltime = 0
 
 
         # 4.1
@@ -99,11 +105,12 @@ class NavigationControls(avango.script.Script):
         ry_offset = self.sf_input_ry.value*0.0001
         rx_offset = self.sf_input_rx.value*0.05
         # 4.4 
-        direction = avango.gua.Vec3(x_offset,0,z_offset)
         #exp_pos = self.sf_output_matrix.value * \
         #                        avango.gua.make_trans_mat(x_offset,trans_y,z_offset)
         #direction = self.scenegraph['/navigation_node'].Transform.value.get_translate() - exp_pos.get_translate()
-        collision = picker.compute_pick_result(self.scenegraph['/navigation_node'].Transform.value.get_translate(),direction,10,[])
+        """ position = self.scenegraph['/navigation_node'].Transform.value.get_translate()
+        position.y = position.y - 1
+        collision = picker.compute_pick_result(position,direction,1,[])
         #print(direction)
         #print(collision)
         if (collision != None):
@@ -111,17 +118,36 @@ class NavigationControls(avango.script.Script):
                 if ('/sphere_' in collision.Object.value.Name.value):
                     print("col")
                 else:
-                    x_offset = -x_offset
-                    z_offset = -z_offset
+                    x_offset = -2*x_offset
+                    z_offset = -2*z_offset
         #    pass
         #else:
         #    x_offset = 0
-        #    z_offset = 0
+        #    z_offset = 0"""
+
+
+        direction = (avango.gua.Vec3(x_offset,0,z_offset))
+        direction.normalize()
+        collide = picker.compute_pick_result(position,direction,1.5,[])
+        collide_right = picker.compute_pick_result(position + avango.gua.Vec3(1.0, 0.0, 0.0),direction,1.5,[])
+        collide_left = picker.compute_pick_result(position + avango.gua.Vec3(-1.0, 0.0, 0.0),direction,1.5,[])
+        if (collide != None):
+            if (collide.Object.value in self.pickable_object_list):
+                collide.Object.value.Tags.value.append('invisible')
+            
+            x_offset = -2*x_offset
+            z_offset = -2*x_offset
+            trans_y = 0
+
+
+
+
+
         self.sf_output_matrix.value = self.sf_output_matrix.value * \
                             avango.gua.make_trans_mat(x_offset,trans_y,z_offset) * \
                             avango.gua.make_rot_mat(ry_offset,0,1,0)
         # 4.2 rot
-        self.scenegraph['/navigation_node/avatar/camera_rot'].Transform.value = avango.gua.make_rot_mat(rx_offset,1,0,0)
+        self.scenegraph['/navigation_node/avatar/camera_rot'].Transform.value = avango.gua.make_rot_mat(-20+rx_offset,1,0,0)
         #self.check_targets()
 
     # 4.5
