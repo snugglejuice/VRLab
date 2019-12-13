@@ -43,17 +43,22 @@ class DesktopViewingSetup:
 
         sphere_coords = [avango.gua.Vec3(5,9,-13),
                         avango.gua.Vec3(10,8,-13),
-                        avango.gua.Vec3(10,8,-15),
+                        avango.gua.Vec3(12,10,-15),
                         avango.gua.Vec3(0,1, 5),
                         avango.gua.Vec3(5,1,4)]
         self.pickable_object_list = []
 
+
         for i in range(len(sphere_coords)):
-            obj_transform = self.loader.create_geometry_from_file('sphere_'+str(i),'data/objects/sphere.obj',avango.gua.LoaderFlags.LOAD_MATERIALS |avango.gua.LoaderFlags.MAKE_PICKABLE)
-            
-            obj_transform.Transform.value = avango.gua.make_trans_mat(sphere_coords[i].x, sphere_coords[i].y, sphere_coords[i].z)
-            self.pickable_object_list.append(obj_transform)
-            self.scenegraph.Root.value.Children.value.append(obj_transform)
+            object_transform = self.loader.create_geometry_from_file('sphere_'+str(i),'data/objects/sphere.obj',avango.gua.LoaderFlags.LOAD_MATERIALS |avango.gua.LoaderFlags.MAKE_PICKABLE)
+            object_transform.Transform.value = avango.gua.make_trans_mat(sphere_coords[i].x, sphere_coords[i].y, sphere_coords[i].z)
+            #print(object_transform.Tags.value)
+            object_transform.Tags.value.append('collectable')
+            self.pickable_object_list.append(object_transform)
+            self.scenegraph.Root.value.Children.value.append(object_transform)
+        #print("list",self.pickable_object_list)
+
+
 
         self.navigation_controls.set_pickable_object(self.pickable_object_list)
         # screen node

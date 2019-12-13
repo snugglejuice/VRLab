@@ -39,6 +39,11 @@ class NavigationControls(avango.script.Script):
     # output matrix for the figure
     sf_output_matrix = avango.gua.SFMatrix4()
     sf_output_matrix.value = avango.gua.make_identity_mat()
+    #output matrix for the ball
+    sf_animation_mat = avango.gua.SFMatrix4()
+    sf_animation_mat.value = avango.gua.make_identity_mat()
+
+    collected = 0
 
     def __init__(self):
         self.super(NavigationControls).__init__()
@@ -46,6 +51,7 @@ class NavigationControls(avango.script.Script):
         self.static_user_height = 2.0
         self.lf_time = time.time()
         self.connect_input_sensors()
+        self.initial_time = self.lf_time
 
     # establishes the connection to the devices registered in the daemon
     def connect_input_sensors(self):
@@ -73,6 +79,8 @@ class NavigationControls(avango.script.Script):
 
     def set_pickable_object(self, pickable_object_list):
         self.pickable_object_list = pickable_object_list
+        self.pickable_object_list[2].Transform.connect_from(self.sf_animation_mat)
+
     # called every frame because of self.always_evaluate(True)
     # updates sf_output_matrix by processing the inputs
     falltime = 0
@@ -82,11 +90,12 @@ class NavigationControls(avango.script.Script):
         self.lf_time = now
 
         # 4.3
+        #position = self.sf_output_matrix.value.get_translate()
         position = self.scenegraph['/navigation_node'].Transform.value.get_translate()
         trans_y = 0
         height_figure = 2
         picker = Picker(self.scenegraph)
-        result = picker.compute_pick_result(position,avango.gua.Vec3(0.0, -1.0, 0.0),10,[])
+        result = picker.compute_pick_result(position,avango.gua.Vec3(0.0, -1.0, 0.0),10,['collectable'])
         
         if (result != None):
             if (round(result.Distance.value,3) < height_figure):
@@ -125,30 +134,45 @@ class NavigationControls(avango.script.Script):
         #    x_offset = 0
         #    z_offset = 0"""
 
-
-        direction = (avango.gua.Vec3(x_offset,0,z_offset))
+        #direction = (self.sf_output_matrix.value * \
+        #                    avango.gua.make_trans_mat(x_offset,0,z_offset)).get_translate()
+        direction = (avango.gua.make_trans_mat(x_offset,0,z_offset) * \
+                        avango.gua.make_rot_mat(ry_offset,0,1,0)).get_translate()
         direction.normalize()
-        collide = picker.compute_pick_result(position,direction,1.5,[])
-        collide_right = picker.compute_pick_result(position + avango.gua.Vec3(1.0, 0.0, 0.0),direction,1.5,[])
-        collide_left = picker.compute_pick_result(position + avango.gua.Vec3(-1.0, 0.0, 0.0),direction,1.5,[])
+        
+        distance = (math.sqrt(direction.x**2+direction.y**2+direction.z**2))
+        collide = picker.compute_pick_result(position,direction,10,['invisible'])
+               
         if (collide != None):
-            if (collide.Object.value in self.pickable_object_list):
-                collide.Object.value.Tags.value.append('invisible')
-            
-            x_offset = -2*x_offset
-            z_offset = -2*x_offset
-            trans_y = 0
+            if (collide.Distance.value < distance + 0.1):
+                if (collide.Object.value in self.pickable_object_list):
+                    collide.Object.value.Tags.value.append('invisible')
+                    self.collected += 1
+                    print(self.collected)
+                    if (self.collected == len(self.pickable_object_list)):
+                        print("Task completed in: ", now - self.initial_time, "seconds")
+                    #self.scenegraph.Root.value.Children.value.remove(collide.Object)
+                #print(collide.Object)
+                x_offset = 0
+                z_offset = 0
+                #trans_y = 0
 
 
 
 
-
+        #print(self.sf_output_matrix.value)
         self.sf_output_matrix.value = self.sf_output_matrix.value * \
                             avango.gua.make_trans_mat(x_offset,trans_y,z_offset) * \
                             avango.gua.make_rot_mat(ry_offset,0,1,0)
+
+        #print(self.sf_output_matrix.value)
         # 4.2 rot
         self.scenegraph['/navigation_node/avatar/camera_rot'].Transform.value = avango.gua.make_rot_mat(-20+rx_offset,1,0,0)
         #self.check_targets()
+
+        #animation
+        height = math.sin(time.time()) * 8.0 + 3.0
+        self.sf_animation_mat.value = avango.gua.make_trans_mat(height, 0.0, 0.0)
 
     # 4.5
     def check_targets(self):
@@ -164,6 +188,5 @@ class NavigationControls(avango.script.Script):
 
 
 
-        
         
 
