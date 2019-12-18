@@ -93,27 +93,18 @@ class ViveNavigationControls(avango.script.Script):
         else:
             #4.9
             
-            #print(disp)
-            #angle =  self.head_node.WorldTransform.value.get_rotate().y,0,1,0
-            #print(self.head_node.WorldTransform.value.get_rotate())
-            distance = 0.001#(math.sqrt(direction.x**2+direction.y**2+direction.z**2))
+            distance = 0.001
             angle = 2*math.acos(self.head_node.WorldTransform.value.get_rotate().w)
             x = math.sin(angle)*distance
             z = math.cos(angle)*distance
             if((x >= 0) & (z >= 0)):
-                print("Q1")
                 disp = avango.gua.Vec3(-x,0,-z)
             if((x >= 0) & (z < 0)):
-                print("Q2")
                 disp = avango.gua.Vec3(x,0,-z)
             if((x < 0) & (z >= 0)):
-                print("Q3")
                 disp = avango.gua.Vec3(x,0,z)
             if((x < 0) & (z < 0)):
-                print("Q4")
                 disp = avango.gua.Vec3(-x,0,-z)
-            #Sprint(angle)
-            print("disp",disp)
             direction = disp
             collide = picker.compute_pick_result(position,direction,10,['invisible'])
                    
@@ -129,8 +120,7 @@ class ViveNavigationControls(avango.script.Script):
                     disp.z = 0  
 
             self.sf_output_matrix.value = self.sf_output_matrix.value * avango.gua.make_trans_mat(disp.x,trans_y,disp.z)
-            #self.sf_output_matrix.value = self.sf_output_matrix.value * new_postion
-
+            
         #animation
         height = math.sin(time.time()) * 8.0 + 3.0
         self.sf_animation_mat.value = avango.gua.make_trans_mat(height, 0.0, 0.0)

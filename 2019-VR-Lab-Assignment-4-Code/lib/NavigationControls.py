@@ -143,17 +143,6 @@ class NavigationControls(avango.script.Script):
         height = math.sin(time.time()) * 8.0 + 3.0
         self.sf_animation_mat.value = avango.gua.make_trans_mat(height, 0.0, 0.0)
 
-    # 4.5
-    def check_targets(self):
-        obj_list = []
-        i = 0
-        while (True): 
-            if (self.scenegraph['/sphere_'+str(i)] in self.scenegraph.Root.value.Children.value):
-                obj_list.append(self.scenegraph['/sphere_'+str(i)])
-            else:
-                break
-            i+=1
-
 
 
         
