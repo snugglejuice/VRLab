@@ -40,7 +40,6 @@ class DesktopViewingSetup:
         self.navigation_node.Children.value.append(self.avatar)
 
         # 4.5
-
         sphere_coords = [avango.gua.Vec3(5,9,-13),
                         avango.gua.Vec3(10,8,-13),
                         avango.gua.Vec3(12,10,-15),
@@ -48,17 +47,12 @@ class DesktopViewingSetup:
                         avango.gua.Vec3(5,1,4)]
         self.pickable_object_list = []
 
-
         for i in range(len(sphere_coords)):
             object_transform = self.loader.create_geometry_from_file('sphere_'+str(i),'data/objects/sphere.obj',avango.gua.LoaderFlags.LOAD_MATERIALS |avango.gua.LoaderFlags.MAKE_PICKABLE)
             object_transform.Transform.value = avango.gua.make_trans_mat(sphere_coords[i].x, sphere_coords[i].y, sphere_coords[i].z)
-            #print(object_transform.Tags.value)
             object_transform.Tags.value.append('collectable')
             self.pickable_object_list.append(object_transform)
             self.scenegraph.Root.value.Children.value.append(object_transform)
-        #print("list",self.pickable_object_list)
-
-
 
         self.navigation_controls.set_pickable_object(self.pickable_object_list)
         # screen node
@@ -68,18 +62,14 @@ class DesktopViewingSetup:
         self.screen_node.Height.value = self.screen_dimensions.y
         self.screen_node.Transform.value = avango.gua.make_trans_mat(
             0.0, 0.0, -0.6)
-        #self.navigation_node.Children.value.append(self.screen_node)
 
         # camera node (head)
         self.camera_node = avango.gua.nodes.CameraNode(Name='camera_node')
         self.camera_node.SceneGraph.value = self.scenegraph.Name.value
-        #self.camera_node.LeftScreenPath.value = self.screen_node.Path.value
         self.camera_node.BlackList.value = ['invisible']
-        #self.navigation_node.Children.value.append(self.camera_node)
         # 4.2
         self.camera_rot = avango.gua.nodes.TransformNode(Name='camera_rot')
         self.camera_rot.Transform.value = avango.gua.make_identity_mat()
-        #self.camera_rot.Transform.value = avango.gua.make_rot_mat(self.navigation_controls.sf_input_rx.value*0.05,1,0,0)
         self.camera_trans = avango.gua.nodes.TransformNode(Name='camera_trans')
         self.camera_trans.Transform.value = avango.gua.make_trans_mat(0,0,30) 
         self.avatar.Children.value.append(self.camera_rot)

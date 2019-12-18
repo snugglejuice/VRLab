@@ -67,6 +67,23 @@ class ViveViewingSetup:
         self.navigation_node.Transform.connect_from(
             self.navigation_controls.sf_output_matrix)
 
+        sphere_coords = [avango.gua.Vec3(5,9,-13),
+                        avango.gua.Vec3(10,8,-13),
+                        avango.gua.Vec3(12,10,-15),
+                        avango.gua.Vec3(0,1, 5),
+                        avango.gua.Vec3(5,1,4)]
+        self.pickable_object_list = []
+        self.loader = avango.gua.nodes.TriMeshLoader()
+
+        for i in range(len(sphere_coords)):
+            object_transform = self.loader.create_geometry_from_file('sphere_'+str(i),'data/objects/sphere.obj',avango.gua.LoaderFlags.LOAD_MATERIALS |avango.gua.LoaderFlags.MAKE_PICKABLE)
+            object_transform.Transform.value = avango.gua.make_trans_mat(sphere_coords[i].x, sphere_coords[i].y, sphere_coords[i].z)
+            object_transform.Tags.value.append('collectable')
+            self.pickable_object_list.append(object_transform)
+            self.scenegraph.Root.value.Children.value.append(object_transform)
+
+        self.navigation_controls.set_pickable_object(self.pickable_object_list)
+
     # creates a virtual model representing a vive controller
     def create_controller_object(self):
         loader = avango.gua.nodes.TriMeshLoader()
