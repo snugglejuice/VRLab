@@ -1,0 +1,593 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cur",
+				"current_object"
+			],
+			[
+				"ge",
+				"get_translate"
+			],
+			[
+				"in",
+				"invisible"
+			],
+			[
+				"depth",
+				"depth_marker"
+			],
+			[
+				"remo",
+				"remove"
+			],
+			[
+				"v",
+				"value"
+			],
+			[
+				"hig",
+				"highlighted_object"
+			],
+			[
+				"h",
+				"highlighted_object"
+			],
+			[
+				"m",
+				"ray_max_distance"
+			],
+			[
+				"dep",
+				"depth_marker"
+			],
+			[
+				"contr",
+				"controller_node"
+			],
+			[
+				"pre",
+				"prev_hand_pos"
+			],
+			[
+				"vec",
+				"Vec3"
+			],
+			[
+				"mak",
+				"make_trans_mat"
+			],
+			[
+				"dra",
+				"dragging_object"
+			],
+			[
+				"dr",
+				"dragging_object"
+			],
+			[
+				"hi",
+				"highlighted_object"
+			],
+			[
+				"c",
+				"collide"
+			],
+			[
+				"hand_node",
+				"hand_node_translate"
+			],
+			[
+				"he",
+				"head_node"
+			],
+			[
+				"ga",
+				"gaze_controlling_mode"
+			],
+			[
+				"s",
+				"speed"
+			],
+			[
+				"y",
+				"y_angle"
+			],
+			[
+				"get",
+				"get_y_rotation"
+			],
+			[
+				"g",
+				"gaze_direction"
+			],
+			[
+				"con",
+				"controller1_sensor"
+			],
+			[
+				"controller_",
+				"controller_directed"
+			],
+			[
+				"cont",
+				"controller"
+			],
+			[
+				"conte",
+				"controller_t"
+			],
+			[
+				"lef",
+				"left_screen_node"
+			],
+			[
+				"head",
+				"head_rot"
+			],
+			[
+				"controller",
+				"controller"
+			],
+			[
+				"co",
+				"controller"
+			],
+			[
+				"contro",
+				"controller_rot"
+			],
+			[
+				"make",
+				"make_trans_mat"
+			],
+			[
+				"controll",
+				"controller_rot"
+			],
+			[
+				"rot",
+				"rot_controller"
+			],
+			[
+				"d",
+				"direction"
+			],
+			[
+				"scr",
+				"screenPos"
+			],
+			[
+				"H",
+				"headPos"
+			],
+			[
+				"nav",
+				"navigation_node"
+			],
+			[
+				"conto",
+				"controller1_sensor"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "config.py",
+			"settings":
+			{
+				"buffer_size": 461,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/VirtualHandInteraction.py",
+			"settings":
+			{
+				"buffer_size": 7527,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/VirtualRayInteraction.py",
+			"settings":
+			{
+				"buffer_size": 7482,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/ViveViewingSetup.py",
+			"settings":
+			{
+				"buffer_size": 4375,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "avango - Clean",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"avango - Clean",
+					""
+				],
+				[
+					"avango - Clean",
+					"Start"
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"avango - Clean",
+				"Start"
+			]
+		]
+	],
+	"build_varint": "Start",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Lab Class B1/Desktop/5_selection_and_manipulation",
+		"/C/Users/Lab Class B1/Desktop/5_selection_and_manipulation/lib"
+	],
+	"file_history":
+	[
+		"/C/Users/Lab Class B1/AppData/Local/Temp/Temp1_2019-VR-Lab-Assignment-4-Code.zip/2019-VR-Lab-Assignment-4-Code/lib/NavigationControls.py",
+		"/C/Users/Lab Class B1/AppData/Local/Temp/Temp1_01-transformations-and-scenegraphs.zip/01-transformations-and-scenegraphs/lib/DesktopNavigation.py",
+		"/C/Users/Lab Class B1/AppData/Local/Temp/Temp1_01-transformations-and-scenegraphs.zip/01-transformations-and-scenegraphs/lib/Scene.py",
+		"/C/Users/Lab Class B1/AppData/Local/Temp/Temp1_01-transformations-and-scenegraphs.zip/01-transformations-and-scenegraphs/lib/DesktopViewingSetup.py",
+		"/C/Users/Lab Class B1/AppData/Local/Temp/Temp1_2019-VR-Lab-Assignment-3-Code.zip/2019-VR-Lab-Assignment-3-Code/lib/DesktopViewingSetup.py",
+		"/C/Users/Lab Class B1/AppData/Local/Temp/Temp1_2019-VR-Lab-Assignment-3-Code.zip/2019-VR-Lab-Assignment-3-Code/lib/BirdControls.py",
+		"/C/Users/Lab Class B1/AppData/Local/Temp/Temp1_2019-VR-Lab-Assignment-4-Code.zip/2019-VR-Lab-Assignment-4-Code/lib/ViveNavigationControls.py",
+		"/E/Assignment 4/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/reike/lib/DesktopViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/reike/lib/Scene.py",
+		"/C/Users/Lab Class B1/AppData/Local/Temp/Temp1_Kruijff_2019-VR-Lab-Assignment-4-Code.zip/Kruijff_2019-VR-Lab-Assignment-4-Code/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/reike/lib/NavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/reike/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/4/lib/ViveViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/4/lib/DesktopViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/4/main.py",
+		"/C/Users/Lab Class B1/Desktop/4/lib/Scene.py",
+		"/C/Users/Lab Class B1/Desktop/4/lib/Picker.py",
+		"/C/Users/Lab Class B1/Desktop/4/leaderboard.py",
+		"/C/Users/Lab Class B1/Desktop/4/lib/NavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/4/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/OLD-2019-VR-Lab-Assignment-4-Code-Final/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff_2019-VR-Lab-Assignment-4-Code/Kruijff_2019-VR-Lab-Assignment-4-Code/lib/NavigationControls.py",
+		"/E/Assignment 4/lib/DesktopViewingSetup.py",
+		"/E/Assignment 4/lib/NavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/4/config.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff_2019-VR-Lab-Assignment-4-Code/Kruijff_2019-VR-Lab-Assignment-4-Code/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/04-students/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/lib/NavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/lib/ViveViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/lib/Scene.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/Scene.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/lib/DesktopViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/DesktopViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/NavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/main.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/daemon.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/config.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/lib/Renderer.py",
+		"/C/Users/Lab Class B1/Desktop/04-students -SG_KP/lib/GuaVE.py",
+		"/F/Assignment 4/config.py",
+		"/C/Users/Lab Class B1/AppData/Local/Temp/Temp1_ßß.zip/Kruijff_2019-VR-Lab-Assignment-4-Code/lib/ViveNavigationControls.py",
+		"/F/2019-VR-Lab-Assignment-4-Code/lib/NavigationControls.py",
+		"/F/2019-VR-Lab-Assignment-4-Code/lib/ViveNavigationControls.py",
+		"/F/2019-VR-Lab-Assignment-4-Code/config.py",
+		"/C/Users/Lab Class B1/Desktop/OLD-2019-VR-Lab-Assignment-4-Code-Final/lib/NavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code-Final/daemon.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code-Final/lib/DesktopViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code-Final/lib/NavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code-Final/lib/Scene.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code-Final/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code-Final/lib/ViveViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/lib/NavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/main.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/lib/DesktopViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/lib/Scene.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/lib/ViveViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/lib/ViveNavigationControls.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/lib/GuaVE.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/daemon.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/start.bat",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/lib/Renderer.py",
+		"/C/Users/Lab Class B1/Desktop/Kruijff-2019-VR-Lab-Assignment-4-Code/config.py",
+		"/C/Users/Lab Class B1/Desktop/students/start.bat",
+		"/C/Users/Lab Class B1/Desktop/students/config.py",
+		"/C/Users/Lab Class B1/Desktop/04-students - Copy/lib/ViveViewingSetup.py",
+		"/C/Users/Lab Class B1/Desktop/04-students - Copy/lib/ViveNavigationControls.py",
+		"/F/exercise4/lib/NavigationControls.py",
+		"/F/04-students/lib/ViveViewingSetup.py",
+		"/F/04-students/lib/ViveNavigationControls.py",
+		"/F/Assignment 4/lib/ViveNavigationControls.py"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"3.6",
+			"navigation"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "config.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 461,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								169,
+								169
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 41.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/VirtualHandInteraction.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7527,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3941,
+								3420
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 28.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/VirtualRayInteraction.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7482,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7251,
+								7251
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 566.0,
+						"translation.y": 2280.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/ViveViewingSetup.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 4375,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 138.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "05-selection-manipulation.sublime-project",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 302.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
