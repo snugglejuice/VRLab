@@ -151,13 +151,13 @@ class VirtualRayInteraction(avango.script.Script):
             if(self.highlighted_object != None):
                 self.highlighted_object.Tags.value.append('invisible')
                 self.current_object = self.highlighted_object
+                position = avango.gua.make_inverse_mat(self.current_object.Transform.value).get_translate()
+                self.current_object.Transform.value = self.current_object.Transform.value * avango.gua.make_trans_mat(position)
             elif (self.current_object != None):
-                    #if ('invisible' in self.current_object.Tags.value):
-                self.current_object.Tags.value.remove('invisible')
-                trans = self.current_object.WorldTransform.value.get_translate()
-                print(trans)
-                self.current_object.WorldTransform.value = self.current_object.WorldTransform.value * \
-                                                        avango.gua.make_trans_mat(self.depth_marker.WorldTransform.value.get_translate())# - self.current_object.WorldTransform.value.get_translate())
-                print(self.current_object.WorldTransform.value)
+                self.current_object.Tags.value.remove('invisible') 
+                temp = self.current_object
+                self.scenegraph.Root.value.Children.value.append(temp)
+                temp.Transform.value = avango.gua.make_trans_mat(self.depth_marker.WorldTransform.value.get_translate())*self.current_object.Transform.value
                 self.current_object = None
+
             # YOUR CODE - END (Exercise 5.6 - Object Teleport)

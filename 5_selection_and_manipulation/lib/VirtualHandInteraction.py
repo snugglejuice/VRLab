@@ -9,6 +9,7 @@ from avango.script import field_has_changed
 # import application libraries
 import config
 from lib.Picker import Picker
+import math
 
 
 # implements interaction techniques based on a virtual hand
@@ -80,7 +81,17 @@ class VirtualHandInteraction(avango.script.Script):
         hand_pos = self.controller_node.WorldTransform.value.get_translate()
         head_pos = self.head_node.WorldTransform.value.get_translate()
         # YOUR CODE - BEGIN (Exercise 5.3 - GoGo)
-        # ...
+        distance = math.sqrt((hand_pos.x-head_pos.x)**2+(hand_pos.z-head_pos.z)**2)
+        virtual_distance = 0
+        if (distance < threshold):
+            virtual_distance = distance
+            self.hand_node_translate.Transform.value = avango.gua.make_identity_mat()
+        else:
+            virtual_distance = 100*((distance-threshold)**2)
+            vd_mat = avango.gua.make_trans_mat(0,0,-virtual_distance)
+            self.hand_node_translate.Transform.value = vd_mat
+
+
         # YOUR CODE - END (Exercise 5.3 - GoGo)
 
     # computes intersections of the hand with the scene
@@ -126,29 +137,26 @@ class VirtualHandInteraction(avango.script.Script):
         if self.highlighted_object is not None:
             # YOUR CODE - BEGIN (Exercise 5.2 - Object Dragging)
             self.dragging_object = self.highlighted_object
-            self.prev_hand_pos = self.hand_node_translate.WorldTransform.value.get_translate()
-            #temp = self.hand_node_translate
-            #self.dragging_object.Transform.value = self.dragging_object.Transform.value *\
-                                                    #avango.gua.make_trans_mat(self.hand_node_translate.Transform.value.get_translate()-self.dragging_object.Transform.value.get_translate())
-            #* avango.gua.make_inverse_mat(self.controller_node.Transform.value) * avango.gua.make_inverse_mat(self.navigation_node.Transform.value)#(self.dragging_object.Transform.value.get_translate() - self.hand_node_translate.Transform.value.get_translate())
-            #self.hand_node_translate.Children.value.append(self.dragging_object) 
-            #self.dragging_object.Transform.value = self.hand_node_translate.WorldTransform.value *  self.dragging_object.Transform.value #*\
-                                                    #avango.gua.make_scale_mat(self.dragging_object.Transform.value.get_scale())
+            if (len(self.hand_node_translate.Children.value) > 1):
+                self.hand_node_translate.Children.value[1] = self.dragging_object
+            else:
+                self.hand_node_translate.Children.value.append(self.dragging_object)
+            self.dragging_object.Transform.value = avango.gua.make_inverse_mat(self.hand_node_translate.WorldTransform.value)*self.dragging_object.Transform.value
             # YOUR CODE - END (Exercise 5.2 - Object Dragging)
 
     # called during every frame of a dragging operation
     def dragging_update(self):
         # YOUR CODE - BEGIN (Exercise 5.2 - Object Dragging)
-        
-        self.dragging_object.Transform.value = self.dragging_object.Transform.value *\
-                                                avango.gua.make_trans_mat(self.hand_node_translate.WorldTransform.value.get_translate() - self.prev_hand_pos)         # YOUR CODE - END (Exercise 5.2 - Object Dragging)
+        pass
+        # YOUR CODE - BEGIN (Exercise 5.2 - Object Dragging)
 
-        self.prev_hand_pos = self.hand_node_translate.WorldTransform.value.get_translate()
     # called once when the dragging button is released
     def stop_dragging(self):
         # YOUR CODE - BEGIN (Exercise 5.2 - Object Dragging)
-        self.dragging_object = None
-        pass
+        if self.highlighted_object is not None:
+            self.dragging_object.Transform.value = self.hand_node_translate.WorldTransform.value*self.dragging_object.Transform.value
+            self.scenegraph.Root.value.Children.value.append(self.dragging_object)
+            self.dragging_object = None
         # YOUR CODE - END (Exercise 5.2 - Object Dragging)
 
     # called whenever sf_dragging_trigger changes and calls start_dragging()
