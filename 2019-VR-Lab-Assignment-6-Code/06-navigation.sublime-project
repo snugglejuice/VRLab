@@ -1,0 +1,26 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"folder_exclude_patterns": ["*__pycache__*", "*.sublime-project"]
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "avango - Clean",
+			"working_dir": "$project_path",
+			"cmd": ["kill.bat"],
+
+			"variants":
+			[
+				{
+					"name": "Start",
+					"working_dir": "$project_path",
+					"cmd": ["start.bat"],
+		        }
+			],
+		}
+	]
+}

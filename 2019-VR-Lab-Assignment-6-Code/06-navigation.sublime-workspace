@@ -1,0 +1,1190 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ce",
+				"center_circle_diameter"
+			],
+			[
+				"movement",
+				"movement_vector"
+			],
+			[
+				"mo",
+				"movement_vector"
+			],
+			[
+				"cen",
+				"center_circle"
+			],
+			[
+				"dis",
+				"dist_z"
+			],
+			[
+				"di",
+				"direction_animation"
+			],
+			[
+				"an",
+				"animation_start_pos"
+			],
+			[
+				"ani",
+				"animation_start_pos"
+			],
+			[
+				"el",
+				"elapsed_time"
+			],
+			[
+				"dir",
+				"direction_animation"
+			],
+			[
+				"to",
+				"total_time"
+			],
+			[
+				"anim",
+				"animation_start_time"
+			],
+			[
+				"nav",
+				"navigation_node"
+			],
+			[
+				"na",
+				"navigation_node"
+			],
+			[
+				"transitio",
+				"transition_mode"
+			],
+			[
+				"tr",
+				"Transform"
+			],
+			[
+				"inter",
+				"intersection_pos_node"
+			],
+			[
+				"m",
+				"make_trans_mat"
+			],
+			[
+				"W",
+				"WorldTransform"
+			],
+			[
+				"c",
+				"controller_node"
+			],
+			[
+				"int",
+				"intersection_pos_node"
+			],
+			[
+				"in",
+				"intersections"
+			],
+			[
+				"Tram",
+				"Transform"
+			],
+			[
+				"ray",
+				"ray_max_distance"
+			],
+			[
+				"falling_",
+				"falling_start_time"
+			],
+			[
+				"falling",
+				"falling_start_time"
+			],
+			[
+				"fall",
+				"falling_start_time"
+			],
+			[
+				"vive_",
+				"vive_platform_2"
+			],
+			[
+				"viv",
+				"vive_platform_2"
+			],
+			[
+				"remove",
+				"remove_child"
+			],
+			[
+				"new",
+				"new_node"
+			],
+			[
+				"getValue",
+				"getValue"
+			],
+			[
+				"get",
+				"get_transform"
+			],
+			[
+				"schedule",
+				"scheduleForEvaluation"
+			],
+			[
+				"refractRa",
+				"refractRayDirection"
+			],
+			[
+				"nor",
+				"normalFlipped"
+			],
+			[
+				"refrac",
+				"refractRayDirection"
+			],
+			[
+				"max",
+				"maxRecursionDepth"
+			],
+			[
+				"refra",
+				"refractionIndex"
+			],
+			[
+				"ref",
+				"refractionIndex_"
+			],
+			[
+				"refle",
+				"reflectionColor"
+			],
+			[
+				"mirr",
+				"mirrorRayDirection"
+			],
+			[
+				"mirro",
+				"mirrorRayStart"
+			],
+			[
+				"re",
+				"recursionDepth"
+			],
+			[
+				"recu",
+				"recursionDepth_"
+			],
+			[
+				"hit",
+				"hitNormalWorld"
+			],
+			[
+				"hitPO",
+				"hitPositionWorld"
+			],
+			[
+				"refl",
+				"reflected"
+			],
+			[
+				"po",
+				"position_"
+			],
+			[
+				"a",
+				"accumulatedColor"
+			],
+			[
+				"sha",
+				"shared_ptr"
+			],
+			[
+				"ve",
+				"vec3"
+			],
+			[
+				"dire",
+				"direction_scaled"
+			],
+			[
+				"tra",
+				"transformed_direction"
+			],
+			[
+				"tran",
+				"transformed_direction"
+			],
+			[
+				"homo",
+				"homogeneous_direction"
+			],
+			[
+				"hom",
+				"homogeneous_start"
+			],
+			[
+				"closes",
+				"closest_t"
+			],
+			[
+				"clos",
+				"closest_o"
+			],
+			[
+				"to_star",
+				"to_start_2_error_accumulator"
+			],
+			[
+				"par",
+				"participant_id-1"
+			],
+			[
+				"to_go",
+				"to_goal_1_error_accumulator"
+			],
+			[
+				"to_goa",
+				"to_goal_2_error"
+			],
+			[
+				"to_goal_2_",
+				"to_goal_2_error_accumulator"
+			],
+			[
+				"to_start_2",
+				"to_start_2_error_accumulator"
+			],
+			[
+				"to_st",
+				"to_start_1_error_accumulator"
+			],
+			[
+				"mani",
+				"mani_error_accumulator"
+			],
+			[
+				"simulate",
+				"simulate_triangle_routes"
+			],
+			[
+				"turn",
+				"turn_choice"
+			],
+			[
+				"distan",
+				"distances"
+			],
+			[
+				"route",
+				"route_sum"
+			],
+			[
+				"dit",
+				"distance_per_route"
+			],
+			[
+				"min",
+				"min_value"
+			],
+			[
+				"std",
+				"std_per_route"
+			],
+			[
+				"av",
+				"avg_per_route"
+			],
+			[
+				"tele",
+				"teleports_per_route"
+			],
+			[
+				"quest",
+				"question_mark"
+			],
+			[
+				"spe",
+				"speech_bubble"
+			],
+			[
+				"model_",
+				"model_x"
+			],
+			[
+				"model",
+				"model_x"
+			],
+			[
+				"idl",
+				"idle_time"
+			],
+			[
+				"out",
+				"output_seconds"
+			],
+			[
+				"shor",
+				"shortest_idle_sec"
+			],
+			[
+				"real",
+				"real_name"
+			],
+			[
+				"spli",
+				"splitted_line"
+			],
+			[
+				"line",
+				"lines_output_passwd"
+			],
+			[
+				"spl",
+				"splitted_line"
+			],
+			[
+				"idle",
+				"idle_time_seconds"
+			],
+			[
+				"logg",
+				"logged_users"
+			],
+			[
+				"sp",
+				"splitted_time"
+			],
+			[
+				"id",
+				"idle_time"
+			],
+			[
+				"host",
+				"hostname_user_combinations"
+			],
+			[
+				"ac",
+				"active_users"
+			],
+			[
+				"outp",
+				"output_passwd"
+			],
+			[
+				"ser",
+				"server_address"
+			],
+			[
+				"error",
+				"error_instance"
+			],
+			[
+				"b_",
+				"b_target"
+			],
+			[
+				"g",
+				"g_target"
+			],
+			[
+				"r",
+				"r_target"
+			],
+			[
+				"key",
+				"keycode"
+			],
+			[
+				"on_position",
+				"on_position_change"
+			],
+			[
+				"WALL_NAV",
+				"WALL_NAV_DIAGRAM_RECT"
+			],
+			[
+				"_nav",
+				"_nav_bottom"
+			],
+			[
+				"_inter",
+				"_interaction_bottom"
+			],
+			[
+				"_pointer",
+				"_pointer_1_user_distance"
+			],
+			[
+				"_as",
+				"_assigned_user_pointer_1"
+			],
+			[
+				"_ya",
+				"_yaw_entry"
+			],
+			[
+				"ENT",
+				"ENTITY_COLOR_DICT"
+			],
+			[
+				"_en",
+				"_entity_vectors"
+			],
+			[
+				"att",
+				"attribute_id"
+			],
+			[
+				"NUM",
+				"NUM_ATTRIBUTES"
+			],
+			[
+				"sorte",
+				"sorted_list"
+			],
+			[
+				"midd",
+				"middle_value_two"
+			],
+			[
+				"middl",
+				"middle_value_one"
+			],
+			[
+				"sor",
+				"sorted_list"
+			],
+			[
+				"cur",
+				"current_count"
+			],
+			[
+				"curre",
+				"current_accumulations"
+			],
+			[
+				"cu",
+				"current_accumulations"
+			],
+			[
+				"stemm",
+				"stemmed_word"
+			],
+			[
+				"pro",
+				"probability"
+			],
+			[
+				"bin",
+				"binary_string"
+			],
+			[
+				"program",
+				"programDirectory"
+			],
+			[
+				"res",
+				"resourcesPath"
+			],
+			[
+				"resour",
+				"resourcesPath_"
+			],
+			[
+				"registered",
+				"registeredInputs"
+			],
+			[
+				"class",
+				"classification"
+			],
+			[
+				"type",
+				"typeString"
+			],
+			[
+				"event",
+				"eventDictionary"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "lib/NavigationTechniqueManager.py",
+			"settings":
+			{
+				"buffer_size": 3899,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/SteeringNavigation.py",
+			"settings":
+			{
+				"buffer_size": 6251,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/JumpingNavigation.py",
+			"settings":
+			{
+				"buffer_size": 8104,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "lib/Picker.py",
+			"settings":
+			{
+				"buffer_size": 1190,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config.py",
+			"settings":
+			{
+				"buffer_size": 101,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 341.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Lab Class D/Desktop/2019-VR-Lab-Assignment-6-Code",
+		"/C/Users/Lab Class D/Desktop/2019-VR-Lab-Assignment-6-Code/lib"
+	],
+	"file_history":
+	[
+		"/C/Users/Lab Class D/Downloads/02-desktop-viewing-setups/02-desktop-viewing-setups/lib/DesktopViewingSetup.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/main.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/daemon.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/config.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/lib/JumpingNavigation.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/lib/NavigationTechniqueManager.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/lib/Picker.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/lib/Renderer.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/lib/Scene.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/lib/SteeringNavigation.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/vr-lab-class-2019/06-navigation/solution/lib/ViveViewingSetup.py",
+		"/home/lopa1693/VR/Papers/2020-ieee-vr-remote-group-jumping-PHD2/reviews/letter-of-changes.txt",
+		"/home/lopa1693/VR/Papers/2020-ieee-vr-remote-group-jumping-PHD2/final-submission/100-word-abstract.txt",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Riecke-Krishna_Priya_Choudoor_80917/2019-VR-Lab-Assignment-4-Code/lib/DesktopViewingSetup.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Riecke-Krishna_Priya_Choudoor_80917/2019-VR-Lab-Assignment-4-Code/lib/NavigationControls.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Argelaguet-Carlos_Federico_Chillón_Geck_80918/2019-VR-Lab-Assignment-4-Code/lib/DesktopViewingSetup.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Argelaguet-Carlos_Federico_Chillón_Geck_80918/2019-VR-Lab-Assignment-4-Code/lib/NavigationControls.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Fuchs-Larisa_Sorokina_80169/Assignment 4/lib/ViveNavigationControls.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Fuchs-Larisa_Sorokina_80169/Assignment 4/lib/DesktopViewingSetup.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Fuchs-Larisa_Sorokina_80169/Assignment 4/lib/NavigationControls.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Guiard-Oliver_Singler_80913/04-application-example/lib/DesktopViewingSetup.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Guiard-Oliver_Singler_80913/04-application-example/lib/NavigationControls.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Guiard-Oliver_Singler_80913/04-application-example/lib/Picker.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Kruijff-Aalok_Shashidhar_Gokhale_80912/Kruijff_2019-VR-Lab-Assignment-4-Code/Kruijff_2019-VR-Lab-Assignment-4-Code/lib/NavigationControls.py",
+		"/mnt/data_internal/vr_exercises/WS_19_20/submissions/04-application-example/Kruijff-Aalok_Shashidhar_Gokhale_80912/Kruijff_2019-VR-Lab-Assignment-4-Code/Kruijff_2019-VR-Lab-Assignment-4-Code/lib/DesktopViewingSetup.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/lib/ViveUser.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/lib/VivePlatform.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/server.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/lib/ViveInput.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/GlobalConfig.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/interactive.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/lib/scenes/Cebit.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/lib/UdpReceiver.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/lib/ControlGUI.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/client/start_client.sh",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/lib/Scene.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/lib/navigations/TeleportNavigation.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/daemon.py",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/server/start_server.sh",
+		"/home/lopa1693/VR/PhD/multi-user-hmd/client/start_client.bat",
+		"/home/lopa1693/Desktop/innoProfile/tex/zwb17/E2.tex",
+		"/home/lopa1693/VR/Projects/NavigationInVR/project-ideas.txt",
+		"/home/lopa1693/VR/Proposals/comuvr/bibtex-bibunits.sh",
+		"/home/lopa1693/VR/Papers/vr-2018-steering-jumping/100-word-abstract.txt",
+		"/home/lopa1693/VR/Proposals/comuvr/bibtex-bibunits.bat",
+		"/home/lopa1693/VR/Proposals/comuvr/multi-user-vr.bib",
+		"/mnt/data_internal/vr_exercises/WS_17_18/assignments/06_selection_manipulation/solution/lib/Manipulation.py",
+		"/mnt/data_internal/vr_exercises/WS_17_18/assignments/06_selection_manipulation/solution/main.py",
+		"/home/lopa1693/VR-Lab-Admin/tutorial-local-image/tutorial-local-image.md",
+		"/home/lopa1693/VR-Lab-Admin/tutorial-local-image/build.sh",
+		"/home/lopa1693/VR/Papers/vr-2018-steering-jumping/vr-2018-conference-paper/reviews/letter-to-primary-about-changes.txt",
+		"/home/lopa1693/Desktop/conflict.txt",
+		"/home/lopa1693/VR/Papers/vr-2018-steering-jumping/vr-2018-conference-paper/reviews/rework-remarks.txt",
+		"/home/lopa1693/VR/Papers/vr-2018-steering-jumping/vr-2018-conference-paper/reviews/all-reviews.txt",
+		"/home/lopa1693/Desktop/guacamole/src/gua/scenegraph/SceneGraph.cpp",
+		"/home/lopa1693/Desktop/guacamole/include/gua/scenegraph/SceneGraph.hpp",
+		"/home/lopa1693/Desktop/guacamole/include/gua/renderer/Renderer.hpp",
+		"/home/lopa1693/Desktop/guacamole/src/gua/renderer/Renderer.cpp",
+		"/home/lopa1693/Desktop/guacamole/src/gua/node/Node.cpp",
+		"/home/lopa1693/Desktop/guacamole/include/gua/node/Node.hpp",
+		"/home/lopa1693/Desktop/avango/avango-core/include/avango/NetNode.h",
+		"/home/lopa1693/Desktop/avango/avango-core/include/avango/FieldContainer.h",
+		"/home/lopa1693/Desktop/guacamole/src/gua/guacamole.cpp",
+		"/opt/guacamole/master/include/gua/node/Node.hpp",
+		"/opt/guacamole/master/src/gua/node/Node.cpp",
+		"/home/lopa1693/Desktop/avango/avango-core/include/avango/Distributed.h",
+		"/home/lopa1693/Desktop/avango/avango-gua/src/avango/gua/network/NetTransform.cpp",
+		"/home/lopa1693/Desktop/avango/avango-gua/src/avango/gua/Init.cpp",
+		"/home/lopa1693/Desktop/avango/avango-core/src/avango/nodes/Typed.cpp",
+		"/home/lopa1693/Desktop/avango/avango-core/include/avango/Typed.h",
+		"/home/lopa1693/Desktop/avango/avango-core/include/avango/Base.h",
+		"/home/lopa1693/Desktop/avango/avango-core/src/avango/nodes/Distributed.cpp",
+		"/home/lopa1693/Desktop/avango/avango-core/src/avango/network/Msg.cpp",
+		"/home/lopa1693/Desktop/avango/avango-core/include/avango/Msg.h",
+		"/home/lopa1693/Desktop/avango/avango-core/src/avango/network/NetNode.cpp",
+		"/home/lopa1693/Desktop/avango/avango-core/include/avango/Field.h",
+		"/home/lopa1693/Desktop/avango/avango-core/src/avango/fields/Field.cpp",
+		"/home/lopa1693/Desktop/avango/avango-core/src/avango/nodes/FieldContainer.cpp",
+		"/home/lopa1693/Desktop/avango/avango-gua/include/avango/gua/scenegraph/Node.hpp",
+		"/home/lopa1693/Desktop/zmq_distribution/server.py",
+		"/home/lopa1693/Desktop/zmq_distribution/client.py",
+		"/home/lopa1693/Desktop/avango/avango-gua/src/avango/gua/scenegraph/Node.cpp",
+		"/home/lopa1693/Desktop/avango/avango-gua/include/avango/gua/scenegraph/SceneGraph.hpp",
+		"/home/lopa1693/Desktop/avango/avango-gua/src/avango/gua/scenegraph/SceneGraph.cpp",
+		"/home/lopa1693/Desktop/zmq_distribution/start-client.sh",
+		"/home/lopa1693/Desktop/zmq_distribution/start-server.sh",
+		"/home/lopa1693/Desktop/avango-applications/configs/scene_config.py",
+		"/home/lopa1693/VR-Lab-Admin/vrlab-cluster/vrlab-server/vrlab-server.md",
+		"/home/lopa1693/VR-Lab-Admin/vrlab-cluster/README.md",
+		"/home/lopa1693/VR-Lab-Admin/vrlab-cluster/cluster/vrlab-server.md",
+		"/home/lopa1693/VR-Lab-Admin/vrlab-cluster/cluster/raid-notes.md",
+		"/home/lopa1693/VR-Lab-Admin/vrlab-cluster/cluster/ltsp-cluster-vrlab.md",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/ray.hpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/cube.hpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/shape.hpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/renderer.hpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/lightsource.hpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/scene.hpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/hitpoint.hpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/material.hpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/sphere.cpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/scene.cpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/shape.cpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/sphere.hpp",
+		"/home/lopa1693/Desktop/raytracer-recap/source/raytracer.cpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/renderer.cpp",
+		"/home/lopa1693/Desktop/raytracer-recap/framework/cube.cpp",
+		"/mnt/Daten/Uni Weimar/Bachelor Medieninformatik/2. Semester/Fächer/Programmiersprachen/Übungsblätter/Übungsblatt 7 (Raytracer)/Final Version mit Buxfixes/framework/src/raytracer.cpp",
+		"/home/tim/Desktop/programmiersprachen-raytracer/raytracer.sublime-workspace",
+		"/home/tim/Desktop/programmiersprachen-raytracer/source/raytracer.cpp",
+		"/home/tim/Desktop/programmiersprachen-raytracer/framework/color.hpp",
+		"/home/tim/Desktop/programmiersprachen-raytracer/framework/ppmwriter.cpp",
+		"/home/tim/Desktop/programmiersprachen-raytracer/framework/window.cpp",
+		"/mnt/Daten/Uni Weimar/Bachelor Medieninformatik/2. Semester/Fächer/Programmiersprachen/Übungsblätter/Übungsblatt 7 (Raytracer)/Final Version mit Buxfixes/framework/src/lightsource.cpp",
+		"/home/tim/Desktop/programmiersprachen-raytracer/raytracer.sublime-project",
+		"/opt/MMMBall/massive-mobile-multiplayer.sublime-project",
+		"/mnt/Daten/Uni Weimar/Bachelor Medieninformatik/2. Semester/Fächer/Programmiersprachen/Übungsblätter/Übungsblatt 7 (Raytracer)/Final Version mit Buxfixes/framework/src/sdf_loader.cpp",
+		"/home/tim/Desktop/programmiersprachen-raytracer/source/CMakeLists.txt",
+		"/mnt/Daten/Uni Weimar/Bachelor Medieninformatik/2. Semester/Fächer/Programmiersprachen/Übungsblätter/Übungsblatt 7 (Raytracer)/Final Version mit Buxfixes/framework/src/material.cpp",
+		"/mnt/Daten/Uni Weimar/Bachelor Medieninformatik/2. Semester/Fächer/Programmiersprachen/Übungsblätter/Übungsblatt 7 (Raytracer)/Final Version mit Buxfixes/framework/src/camera.cpp",
+		"/home/tim/Desktop/programmiersprachen-raytracer/framework/renderer.cpp",
+		"/home/tim/Desktop/programmiersprachen-raytracer/source/example.cpp",
+		"/home/tim/Desktop/programmiersprachen-raytracer/CMakeLists.txt",
+		"/opt/MMMBall/game/include/Game.hpp",
+		"/opt/MMMBall/game/src/Game.cpp",
+		"/opt/MMMBall/game/src/Ball.cpp",
+		"/opt/MMMBall/game/src/Player.cpp",
+		"/opt/MMMBall/game/src/InputHandler.cpp"
+	],
+	"find":
+	{
+		"height": 59.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"intersection_sphere",
+			"print(",
+			"celebratoryLights",
+			"winsound",
+			"SensorOrientation",
+			"avango.gua.lod",
+			"lod",
+			"R1",
+			" \n",
+			"children_",
+			"clear_children",
+			"parent_ =",
+			"parent_",
+			"add_chil",
+			"add_child",
+			"set_dirty(",
+			"monkey2",
+			"get_parent(",
+			"update_cache",
+			"pop(",
+			"Path",
+			"add_node",
+			"push_back",
+			"remove_child",
+			"add_child",
+			"set_parent(",
+			"parent_",
+			"parent",
+			"set_dirty",
+			"child",
+			"update_cache",
+			"name",
+			"Name",
+			"getName",
+			"DISTRIBUTION",
+			"notifyUpdates",
+			"push",
+			"consumeUpdateMessage",
+			"pushValue",
+			"clear(",
+			"value",
+			"set",
+			"path",
+			"get_path",
+			"path",
+			"Path",
+			"fieldChanged",
+			"name",
+			"getName",
+			"Parent",
+			"av_popMsg",
+			"DISTRIBUTION",
+			"consumeUpdateMessage",
+			"[index]",
+			"group",
+			"transform1",
+			"nettrans",
+			"hitNormal",
+			"hitPoint.normal_",
+			"radius",
+			" \n",
+			";\n",
+			"smallestValidT",
+			"vec3",
+			" \n",
+			"();*/\n",
+			"getDesktopMode()",
+			"screenWidth",
+			"Haupt",
+			"anforderung",
+			"Kuboid",
+			"66.65",
+			"9659c",
+			"cbfd",
+			"aadb890",
+			"958b",
+			"b1c42",
+			"f934",
+			"cb8",
+			"81d1",
+			"43daad",
+			"start_dragging",
+			"2",
+			"60",
+			"dev_null",
+			"100",
+			"\\\"",
+			"\"",
+			"Suma2010",
+			" ",
+			"seoncd",
+			"annotation",
+			"exists",
+			"_play_started",
+			"Callback",
+			")\n",
+			"_set_state",
+			"_play_started",
+			"fullscreen",
+			"self.container",
+			"add_widget",
+			"_load_thumbnail",
+			"on_image_overlay",
+			"on_source",
+			"_video_load_ev",
+			"PlayerPreview",
+			"VideoPlayerStop",
+			"VideoPlayerPlayPause",
+			"Volume",
+			"App",
+			"VideoPlayer",
+			"window",
+			"_set_state",
+			"setter",
+			"def setter",
+			"self.setter",
+			"_video",
+			"num_subplots",
+			"Title",
+			"perform_a_star_search",
+			"title",
+			"\n            ",
+			"276",
+			"45 ",
+			"106",
+			"Minimum detected",
+			"106 ",
+			"createPeakMap"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"``",
+			"\\\"",
+			"PhysicalCircle",
+			"ballWasIn",
+			"ball_",
+			"centerLineAt_",
+			"bottomLineAt_",
+			"topLineAt_",
+			"rightLineAt_",
+			"leftLineAt_",
+			"players_",
+			"rightGoalEndLine_",
+			"leftGoalEndLine_",
+			"goalEndHeight_",
+			"goalStartHeight_",
+			"bottomBorderLine_",
+			"topBorderLine_",
+			"temporaryBottomBorder_",
+			"temporaryTopBorder_",
+			"rightBorderLine_",
+			"leftBorderLine_",
+			"screenHeight_",
+			"screenWidth_",
+			"window",
+			"vectorAccessMutex_",
+			"updateDeviceListThread_",
+			"font.ttf",
+			"redBox_",
+			"blueBox_",
+			"font_",
+			"fpsString_",
+			"score_",
+			"scoreLine_",
+			"centerPoint_",
+			"centerCircle_",
+			"goalRight_",
+			"goalLeft_",
+			"field_",
+			"lines_",
+			"pointsRedTeam_",
+			"pointsBlueTeam_",
+			"type",
+			"Event.key.code",
+			"sf::CircleShape",
+			"sf::Keyboard",
+			"glasses",
+			"keyDown1Pressed",
+			"keyUp1Pressed"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "lib/NavigationTechniqueManager.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1238,
+								1238
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "lib/SteeringNavigation.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6251,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5516,
+								5516
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1351.33333333,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/JumpingNavigation.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6312,
+								6313
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 13.3333333333,
+						"translation.y": 1458.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/Picker.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1190,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "config.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								18,
+								18
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 41.0
+	},
+	"input":
+	{
+		"height": 41.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "guacamole-project",
+	"project": "06-navigation.sublime-project",
+	"replace":
+	{
+		"height": 76.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Scatter",
+				"ScatterPlotRessource"
+			],
+			[
+				"Scatterplot",
+				"ScatterPlotLoader"
+			]
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 285.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
